@@ -1,0 +1,10 @@
+<view class="fs30 fc-c0">
+  <view class="text-view-inner">
+    {{ inner }}
+  </view>
+  <view
+    wx:if="{{ textContent.length > maxLength }}"
+    bindtap="toggleShowAll" class="ctrl-btn fc-t fs30">
+    {{ showAll ? '收起' : '全文' }}
+  </view>
+</view>

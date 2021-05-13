@@ -1,0 +1,47 @@
+.ti-container {
+  padding: 24rpx 32rpx 32rpx;
+  margin-top: 16rpx;
+  background-color: #ffffff;
+}
+
+.ti-container .header {
+  width: 100%;
+}
+
+.ti-container .input-area {
+  width: 100%;
+  height: 132rpx;
+  margin-top: 24rpx;
+}
+
+.ti-container .footer {
+  width: 100%;
+  height: 48rpx;
+  margin-top: 32rpx;
+}
+
+.ti-container .footer .identify {
+  width: 120rpx;
+  height: 48rpx;
+  margin-right: 32rpx;
+  color: #ffffff;
+  border-radius: 24rpx;
+}
+
+.ti-container .footer .clean {
+  width: 120rpx;
+  height: 48rpx;
+  color: #999999;
+  margin-right: 10rpx;
+  border-radius: 24rpx;
+}
+
+.ti-container .errorTip-container {
+  width: 100%;
+  padding-top: 18rpx;
+}
+
+.ti-container .errorTip-container .errorTip {
+  color: #ff3333;
+  height: 36rpx;
+}

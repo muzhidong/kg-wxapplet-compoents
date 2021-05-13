@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "panel": "/common-components/panel/panel",
+    "standard-box": "/common-components/standard-box/standard-box",
+    "orange-box": "/common-components/orange-box/orange-box"
+  }
+}

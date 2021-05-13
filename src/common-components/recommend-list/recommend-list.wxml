@@ -1,0 +1,19 @@
+<view class="recommend-box f-xl-yt">
+
+  <view class="recommend-wrapper" wx:for="{{list}}" wx:key="index">
+
+    <button class="recommend-item f-xl-yt" 
+      style="margin-left: 0;margin-right: 0;line-height: normal;font-weight: inherit;font-size: inherit;"
+      bindtap="onTapItem" data-index="{{index}}">
+
+      <image class="img-box" src="{{ item.thumb }}" mode="aspectFit"></image>
+      <view class="content">
+        <text class="title fc-black fs30">{{ item.title }}</text>
+        <text class="subtitle fc-c2 fs24 line-clamp2">{{ item.subtitle }}</text>
+      </view>
+
+    </button>
+
+  </view>
+
+</view>

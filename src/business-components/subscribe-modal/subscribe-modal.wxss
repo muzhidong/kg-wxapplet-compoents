@@ -1,0 +1,40 @@
+.f-xc-yc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fc-c0 {
+  color: #1a1a1a;
+}
+
+.fc-c1 {
+  color: #666666;
+}
+
+.fs30 {
+  font-size: 30rpx;
+}
+
+.kg-btn {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 88rpx;
+  border-radius: 44rpx;
+}
+
+.kg-btn.primary {
+  background-color: #2eb2f0;
+  font-size: 34rpx;
+  color: #ffffff;
+}
+
+.subscribe-icon {
+  width: 622rpx;
+  height: 214rpx;
+  margin: 0 0 32rpx;
+}

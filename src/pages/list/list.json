@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "list-item": "/common-components/list-item/list-item",
+    "message-item": "/common-components/message-item/message-item",
+    "recommend-list": "/common-components/recommend-list/recommend-list",
+    "pull-down-list": "/common-components/pull-down-list/pull-down-list",
+    "two-column-list": "/common-components/two-column-list/two-column-list"
+  }
+}

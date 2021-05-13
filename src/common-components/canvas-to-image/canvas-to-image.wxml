@@ -1,0 +1,12 @@
+<view
+  style="width: {{canvasWidth ? canvasWidth + 'px' : '100%'}}; height: {{canvasHeight ? canvasHeight + 'px' : '100%'}}"
+  class="canvas-box">
+
+  <canvas canvas-id="drawCanvas" 
+    style="width: {{canvasWidth}}px; height: {{canvasHeight}}px" 
+    disable-scroll="true" 
+    binderror="canvasError">
+  </canvas>
+
+</view>
+

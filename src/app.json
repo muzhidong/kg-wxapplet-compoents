@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/box/box",
+    "pages/card/card",
+    "pages/cli/cli",
+    "pages/form/form",
+    "pages/functional/functional",
+    "pages/image/image",
+    "pages/index/index",
+    "pages/list/list",
+    "pages/modal/modal",
+    "pages/more/more",
+    "pages/other/other",
+    "pages/table/table",
+    "pages/text/text"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "公瑾组件库",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "entryPagePath": "pages/index/index",
+  "subpackages": [],
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#3399FF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "组件库"
+      },
+      {
+        "pagePath": "pages/cli/cli",
+        "text": "脚手架"
+      },
+      {
+        "pagePath": "pages/more/more",
+        "text": "更多"
+      }
+    ]
+  }
+}

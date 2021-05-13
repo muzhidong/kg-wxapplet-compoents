@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "canvas-to-image": "/common-components/canvas-to-image/canvas-to-image",
+    "photo-identification": "/common-components/photo-identification/photo-identification",
+    "chat": "/common-components/chat/chat"
+  }
+}

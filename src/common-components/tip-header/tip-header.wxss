@@ -1,0 +1,70 @@
+.base {
+  padding: 0rpx 32rpx 0rpx 12rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.groupBase {
+  display: flex;
+  flex-direction: row;
+}
+
+.colorLine {
+  margin-top: 16rpx;
+  height: 40rpx;
+  background-color: #3399ff;
+  border-radius: 6rpx;
+  border: 4rpx solid #3399ff;
+  box-sizing: border-box;
+}
+
+.groupContainer {
+  padding-left: 12rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.groupContainer .groupQuestion {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #3399ff;
+  border-width: 2rpx;
+  margin-left: 8rpx;
+  color: #3399ff;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+
+.groupMessage {
+  padding-top: 16rpx;
+  padding-bottom: 0rpx;
+  font-size: 30rpx;
+  color: #1a1a1a;
+}
+
+.groupTip {
+  font-size: 30rpx;
+  color: #3399ff;
+}
+
+.groupDes {
+  padding: 16rpx 32rpx 0rpx 32rpx;
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.question {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #3399ff;
+  border-width: 2rpx;
+  margin-right: 8rpx;
+}

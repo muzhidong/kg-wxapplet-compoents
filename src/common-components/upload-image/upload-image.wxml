@@ -1,0 +1,52 @@
+<view class="upload-image-box f-xl-yt">
+
+  <block wx:if="{{isBtnShownBefore}}">
+    <template is="upload" data="{{showFiles,maxCount,canEdit,lineCount}}" ></template>
+  </block>
+
+  <view 
+    wx:for="{{ showFiles }}" 
+    wx:key="index"
+    style="width: {{ 1 / lineCount * 100 }}%;"
+    class="item-box">
+    <button class="item">
+      <image
+        src="{{ item.url }}"
+        data-url="{{ item.url }}"
+        mode="scaleToFill"
+        bindtap="previewImage"></image>
+      <view
+        wx:if="{{ item.state === 'ing' }}"
+        class="progress-bar">
+        <view style="width: {{ item.loadProgress + '%' }}" class="progress"></view>
+      </view>
+      <image
+        wx:if="{{ item.state === 'fail' }}"
+        src="./assets/edit_img_broken@2x.png"
+        mode="scaleToFill" class="fail-image"></image>
+      <view 
+        wx:if="{{ canEdit }}" 
+        data-index="{{ index }}"
+        data-url="{{ item.url }}"
+        bindtap="del"
+        class="del-btn"></view>
+    </button>
+  </view>
+
+  <block wx:if="{{!isBtnShownBefore}}">
+    <template is="upload" data="{{showFiles,maxCount,canEdit,lineCount}}" ></template>
+  </block>
+
+</view>
+
+<template name="upload">
+  <view 
+    wx:if="{{ showFiles.length < maxCount && canEdit }}"
+    style="width: {{ 1 / lineCount * 100 }}%" 
+    class="item-box">
+    <view class="item">
+      <button bindtap="chooseImage" class="add-btn"></button>
+    </view>
+  </view>
+</template>
+

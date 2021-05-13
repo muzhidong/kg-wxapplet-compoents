@@ -1,0 +1,40 @@
+{
+  "source": {
+    "include": ["src/business-components", "src/common-components", "src/common-templates"],
+    "includePattern": "\\.js$"
+  },
+  "opts": {
+    "encoding": "utf8",
+    "destination": "./docs/",
+    "recurse": true,
+    "verbose": true,
+    "template": "node_modules/docdash"
+  },
+  "docdash": {
+    "sort": true,
+    "sectionOrder": [
+      "Modules",
+      "Classes",
+      "Interfaces",
+      "Externals",
+      "Events",
+      "Mixins",
+      "Namespaces",
+      "Tutorials"
+    ],
+    "meta": {
+      "title": "公瑾组件库说明文档",
+      "description": "公瑾组件库说明文档",
+      "keyword": "公瑾 组件库 说明文档"
+    },
+    "search": true,
+    "menu": {
+      "Author": {
+        "href": "https://github.com/muzhidong",
+        "target": "_blank",
+        "class": "menu-item",
+        "id": "website_link"
+      }
+    }
+  }
+}

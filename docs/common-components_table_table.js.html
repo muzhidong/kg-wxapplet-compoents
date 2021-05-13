@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>common-components/table/table.js - 公瑾组件库说明文档</title>
+    
+    <meta name="description" content="公瑾组件库说明文档" />
+    
+        <meta name="keywords" content="公瑾 组件库 说明文档" />
+        <meta name="keyword" content="公瑾 组件库 说明文档" />
+    
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/muzhidong" target="_blank" class="menu-item" id="website_link" >Author</a></h2><h3>Modules</h3><ul><li><a href="module-%255BT%255Dkg-expandable-picker.html">[T]kg-expandable-picker</a></li><li><a href="module-%255BT%255Dkg-expandable-text.html">[T]kg-expandable-text</a></li><li><a href="module-%255BT%255Dkg-input.html">[T]kg-input</a></li><li><a href="module-%255BT%255Dkg-picker.html">[T]kg-picker</a></li><li><a href="module-%255BT%255Dkg-search-input.html">[T]kg-search-input</a></li><li><a href="module-%255BT%255Dkg-switch.html">[T]kg-switch</a></li><li><a href="module-%255BT%255Dkg-text.html">[T]kg-text</a></li><li><a href="module-abbreviation-text.html">abbreviation-text</a></li><li><a href="module-authorize-modal.html">authorize-modal</a></li><li><a href="module-base-modal.html">base-modal</a></li><li><a href="module-button-group.html">button-group</a></li><li><a href="module-canvas-to-image.html">canvas-to-image</a></li><li><a href="module-card.html">card</a></li><li><a href="module-chat.html">chat</a></li><li><a href="module-get-discount.html">get-discount</a></li><li><a href="module-get-discount-modal.html">get-discount-modal</a></li><li><a href="module-image-collect.html">image-collect</a></li><li><a href="module-image-cropper.html">image-cropper</a></li><li><a href="module-image-list.html">image-list</a></li><li><a href="module-image-swiper.html">image-swiper</a></li><li><a href="module-label-input.html">label-input</a></li><li><a href="module-label-picker.html">label-picker</a></li><li><a href="module-label-textarea.html">label-textarea</a></li><li><a href="module-link-view.html">link-view</a></li><li><a href="module-list-item.html">list-item</a></li><li><a href="module-message-item.html">message-item</a></li><li><a href="module-nav-bar.html">nav-bar</a></li><li><a href="module-nav-pager.html">nav-pager</a></li><li><a href="module-no-content.html">no-content</a></li><li><a href="module-num-header.html">num-header</a></li><li><a href="module-orange-box.html">orange-box</a></li><li><a href="module-panel.html">panel</a></li><li><a href="module-personal-card.html">personal-card</a></li><li><a href="module-photo-identification.html">photo-identification</a></li><li><a href="module-preview-image.html">preview-image</a></li><li><a href="module-pull-down-list.html">pull-down-list</a></li><li><a href="module-recommend-list.html">recommend-list</a></li><li><a href="module-select-box.html">select-box</a></li><li><a href="module-standard-box.html">standard-box</a></li><li><a href="module-subscribe-modal.html">subscribe-modal</a></li><li><a href="module-table.html">table</a></li><li><a href="module-text-identification.html">text-identification</a></li><li><a href="module-tip-header.html">tip-header</a></li><li><a href="module-two-column-list.html">two-column-list</a></li><li><a href="module-upload-image.html">upload-image</a></li><li><a href="module-video-view.html">video-view</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">common-components/table/table.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module table
+ * @description 表格
+ * @property {Array}  table           数据源，一个二维数组
+ * @property {number} fixedColsNum    开始滚动的列，默认为1
+ * @property {number} tbodyHeight     自定义表体高度
+ */
+Component({
+
+  properties: {
+
+    table: { //传入数据源
+      type: Array,
+      value: [],
+      observer: function(newVal, oldVal) {
+        //属性被设置的时候触发
+        this.setData({
+          table: newVal ? newVal : [],
+        }, () => {
+          this.ready();
+        })
+        //console.log('table', this.data.table);
+      }
+    },
+
+    fixedColsNum: { //开始滚动的列
+      type: [Number, String], //可传入数字和数字字符
+      value: 1,
+      observer: function(newVal, oldVal) {
+        //属性被设置的时候触发
+        this.setData({
+          fixedColsNum: newVal ? newVal : 1,
+        }, () => {
+          this.ready();
+        })
+        //console.log('fixedColsNum', this.data.fixedColsNum);
+      }
+    },
+
+    tbodyHeight: { //表体高度（内部没有使用，所以不用定义到私有）
+      type: [Number, String],
+      value: 0,
+    }
+
+  },
+
+  data: {
+    // 数据源，外部传入
+    table: [],
+    // 开始滚动的列，可外部传入
+    fixedColsNum: 1,
+    // 所有单元格的宽度
+    colWidths: [],
+    // 记录滚动位置
+    scrollTop: 0,
+    // 根据colWidths获取的总长度
+    totalWidth: 0,
+    // 横竖方向都要固定的左上角单元格
+    fixedCols: [],
+    // 固定列（除表头）
+    firstColsOther: [],
+    // 固定表头（完整）
+    thead: [],
+    // 固定表体（完整）
+    tbody: [],
+  },
+
+  ready: function(e) {
+    this.ready();
+    console.log('table_components ready');
+  },
+
+  methods: {
+
+    /**
+     * 滚动时触发，event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY}
+     */
+    scrollVertical: function(event) {
+      this.setData({
+        scrollTop: event.detail.scrollTop,
+      });
+    },
+
+    /**
+     * 组件的初始化
+     */
+    ready: function() {
+
+      const colWidths = this.getColWidths();
+      const totalWidth = this.getTotalWidth(colWidths);
+      const fixedCols = this.getFixedCols();
+      const firstColsOther = this.getFirstColsOther(fixedCols);
+      const thead = this.getThead();
+      const tbody = this.getTbody();
+
+      this.setData({
+        colWidths: colWidths,
+        totalWidth: totalWidth,
+        fixedCols: fixedCols,
+        firstColsOther: firstColsOther,
+        thead: thead,
+        tbody: tbody,
+      }, () => {
+        console.log('table render done')
+      });
+
+      // console.log('colWidths', this.data.colWidths);
+      // console.log('totalWidth', this.data.totalWidth);
+      // console.log('fixedCols', this.data.fixedCols);
+      // console.log('firstColsOther', this.data.firstColsOther);
+      // console.log('thead', this.data.thead);
+      // console.log('tbody', this.data.tbody);
+
+    },
+
+    /**
+     * 获取固定表头（完整）
+     */
+    getThead: function() {
+      return this.data.table.length > 0 ? this.data.table[0] : [];
+    },
+
+    /**
+     * 获取固定表体（完整）
+     */
+    getTbody: function() {
+      return this.data.table.length > 1 ? this.data.table.slice(1) : [];
+    },
+
+    /**
+     * 横竖方向都要固定的左上角单元格
+     */
+    getFixedCols: function() {
+      const result = [];
+      this.data.table.forEach(row => {
+        result.push(row
+          .slice(0, this.data.fixedColsNum)
+          .map(col => col))
+      });
+      return result;
+    },
+
+    /**
+     * 获取固定列（除表头）
+     */
+    getFirstColsOther: function(fixedCols) {
+      return fixedCols.length > 1 ? fixedCols.slice(1) : [];
+    },
+
+    /**
+     * 计算每列的宽度，依据单元格的字符串像素宽度
+     */
+    getColWidths: function() {
+      const table = this.data.table;
+      if (table.length === 0) return [];
+      const result = [];
+      const TH_FONT_SIZE = 20;
+      const TD_FONT_SIZE = 24;
+      const SCALE_RATIO = 1.5;
+
+      for (let colIndex = 0, colLen = table[0].length; colIndex &lt; colLen; colIndex++) {
+        let maxWidth = this.getTextWidth(table[0][colIndex], TH_FONT_SIZE);
+        for (let rowIndex = 1, rowLen = table.length; rowIndex &lt; rowLen; rowIndex++) {
+          const cell = table[rowIndex][colIndex];
+          const cellWidth = this.getTextWidth(cell, TD_FONT_SIZE);
+          if (cellWidth > maxWidth) {
+            maxWidth = cellWidth;
+          }
+        }
+        result.push(Math.ceil(maxWidth * SCALE_RATIO));
+      }
+
+
+      return result;
+    },
+
+    /**
+     * 获取总长度
+     */
+    getTotalWidth: function(colWidths) {
+      return colWidths.length > 0 ? colWidths.reduce((acc, cur) => {
+        return acc + cur
+      }) : 0;
+    },
+
+    /**
+     * 根据字符串长度和字体大小计算文本长度，中文为 fontSize，其余为 fontSize / 2
+     * https://segmentfault.com/a/1190000016405843
+     * @param {String} text - 文本
+     * @param {Number} fontSize - 字体大小
+     * @returns {Number} 长度
+     */
+    getTextWidth: function(text, fontSize) {
+
+      text = String(text);
+      let p = text.split('\n');
+      let width = 0;
+
+      for (let item of p) {
+
+        let pStrArr = item.split('');
+        let pWidth = 0;
+
+        for (let f of pStrArr) {
+          if (new RegExp('[a-zA-Z]').test(f)) {
+            pWidth += 7;
+          } else if (new RegExp('[0-9]').test(f)) {
+            pWidth += 5.5;
+          } else if (new RegExp('\\.').test(f)) {
+            pWidth += 2.7;
+          } else if (new RegExp('-').test(f)) {
+            pWidth += 3.25;
+          } else if (new RegExp('[\u4e00-\u9fa5]').test(f)) { // 中文匹配
+            pWidth += 10;
+          } else if (new RegExp('\\(|\\)').test(f)) {
+            pWidth += 3.73;
+          } else if (new RegExp('\\s').test(f)) {
+            pWidth += 2.5;
+          } else if (new RegExp('%').test(f)) {
+            pWidth += 8;
+          } else {
+            pWidth += 10;
+          }
+        }
+
+        if (pWidth >= width) {
+          width = pWidth;
+        }
+
+      }
+
+      return width * fontSize / 10;
+
+    }
+
+
+  }
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon May 10 2021 15:03:30 GMT+0800 (中国标准时间) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>

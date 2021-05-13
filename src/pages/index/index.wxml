@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y="{{true}}">
+    <template is="module" data="{{...funcCommonComp}}" />
+    <template is="module" data="{{...uiFormCommonComp}}" />
+    <template is="module" data="{{...uiImageCommonComp}}" />
+    <template is="module" data="{{...uiTextCommonComp}}" />
+    <template is="module" data="{{...uiDialogCommonComp}}" />
+    <template is="module" data="{{...uiListCommonComp}}" />
+    <template is="module" data="{{...uiTableCommonComp}}" />
+    <template is="module" data="{{...uiCardCommonComp}}" />
+    <template is="module" data="{{...uiBoxCommonComp}}" />
+    <template is="module" data="{{...uiOtherCommonComp}}" />
+    <template is="module" data="{{...businessComp}}" />
+    <view class="f-xc-yc,c-link" bindtap="openOfficialApplet">
+      <image src="/images/finger.svg" class="i-finger"  mode="aspectFit" /> 
+      <view class="f-xc-yc,fs30,t-link" >微信官方提供的小程序扩展组件</view>
+    </view>
+  </scroll-view>
+</view>
+<template name="module">
+  <view class="title">{{title}}</view>
+  <view class="item-wrapper"> 
+    <block wx:for="{{items}}" wx:key='index'>
+      <view class="item" bindtap="openPage" data-path="{{item.path}}">
+        <view>
+          {{item.codeName}}
+          <view class="space"></view>
+          {{item.name}}
+        </view>
+        <view class="arrow-btn,right"></view>
+      </view>
+    </block>
+  </view>
+</template>

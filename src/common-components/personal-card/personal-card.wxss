@@ -1,0 +1,159 @@
+.personal-card {
+  padding: 32rpx 32rpx 24rpx 32rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 8rpx rgba(204, 204, 204, 1);
+  background-color: #ffffff;
+}
+
+.title {
+  height: 56rpx;
+  padding-top: 8rpx;
+  margin-bottom: 18rpx;
+  position: relative;
+}
+
+.thumb {
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  right: -16rpx;
+  top: -16rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.thumb .image {
+  width: 100%;
+  height: 100%;
+}
+
+.thumb .edit-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 28rpx;
+  height: 28rpx;
+  background-color: #ffffff;
+  border-radius: 50% 0 0 0;
+}
+
+.thumb .edit-icon .icon {
+  width: 74%;
+  height: 74%;
+}
+
+.name {
+  margin-right: 16rpx;
+  color: #1A1A1A;
+  font-weight: bold;
+}
+
+.official-icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 6rpx;
+}
+
+.label-icon,
+.company-icon,
+.phone-icon {
+  flex: none;
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 16rpx;
+}
+
+.phone-box {
+  height: 40rpx;
+  margin-bottom: 18rpx;
+}
+
+.phone {
+  margin-right: 16rpx;
+}
+
+.dial-btn {
+  width: 84rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0;
+  background-color: #ffffff;
+  border: 1rpx solid #2eb2f0;
+  border-radius: 20rpx;
+  text-align: center;
+}
+
+.label-box {
+  height: 36rpx;
+  margin-bottom: 24rpx;
+}
+
+.label {
+  margin: 0 24rpx 0 0;
+  position: relative;
+}
+
+.label-text {
+  position: relative;
+  z-index: 1;
+}
+
+.label::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 8rpx;
+  border-radius: 4rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  /* background-color: #C8C8FF; */
+}
+
+.label:nth-child(2)::before {
+  background-color: #C8C8FF;
+}
+
+.label:nth-child(3)::before {
+  background-color: #ADEFE4;
+}
+
+.label:nth-child(4)::before {
+  background-color: #F8DEBF;
+}
+
+.company-box {
+  height: 74rpx;
+  margin-bottom: 24rpx;
+}
+
+.company-icon {
+  margin-top: 8rpx;
+}
+
+.hr {
+  width: 100%;
+  height: 2rpx;
+  margin-bottom: 24rpx;
+  background-color: #E5E5E5;
+}
+
+.func-btn {
+  padding: 0;
+  line-height: 1.5;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin: 0;
+}
+
+.func-btn::after {
+  display: none;
+}
+
+.share-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 16rpx;
+}

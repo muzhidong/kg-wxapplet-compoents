@@ -1,0 +1,23 @@
+<view class="indicator-container">
+
+  <view 
+    wx:for="{{ navList }}"
+    wx:key="index"
+    class="indicator-item,{{ length===1 ? 'item1' : (length === 2 ? 'item2' : (length===3 ? 'item3' : 'item4')) }}"
+    bindtap="changeIndex"
+    data-index="{{ index }}">
+
+    <view class="indicator-item-text">
+      <view class="fs30,{{ selectedIndex === index ? 'fc-t' : 'fc-c1' }}">
+        {{ item.text }}
+      </view>
+      <view class="fs24,{{ item.number && item.number > 0 ? 'indicator-item-tip' : 'none' }}">
+        {{item.number}}
+      </view>
+    </view>
+
+    <view class="{{ selectedIndex===index ? 'indicator-item-underline' : 'none' }}"></view>
+
+  </view>
+
+</view>

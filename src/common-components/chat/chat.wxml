@@ -1,0 +1,36 @@
+<view class="chat-wrapper" style="padding-bottom: {{inputTop}}px;padding-bottom: calc({{inputTop}}px + constant(safe-area-inset-bottom));padding-bottom: calc({{inputTop}}px + env(safe-area-inset-bottom));">
+
+  <scroll-view scroll-top="{{scrollHeight}}" 
+    scroll-y="{{true}}" 
+    enable-back-to-top="{{true}}" 
+    class="chat-container" 
+    bind:scrolltoupper="getChatRecords" 
+    scroll-into-view="{{msgId}}">
+    <block wx:for="{{chatMsgList}}" wx:key="index">
+      <chat-item isSelf="{{item.self}}" 
+        isFail="{{ item.isFail }}" 
+        date="{{item.time}}" 
+        inner="{{item.content}}" 
+        thumb="{{item.thumb}}" 
+        id="msg-{{index}}"></chat-item>
+    </block>
+  </scroll-view>
+
+  <view class="textarea-wrapper" style="bottom: {{ inputBottom }}px;">
+    <textarea class="bottom-textarea" 
+      show-confirm-bar="{{false}}" 
+      adjust-position="{{false}}" 
+      maxlength="-1" 
+      auto-height="{{true}}" 
+      bindconfirm="send" 
+      value="{{content}}" 
+      bindfocus="onFocus" 
+      bindblur="onBlur" 
+      bindinput="onInput" 
+      hold-keyboard="{{true}}"></textarea>
+      <button type="primary" class="send-btn" disabled="{{!content}}" bindtap="send">
+        发送
+      </button>
+  </view>
+
+</view>

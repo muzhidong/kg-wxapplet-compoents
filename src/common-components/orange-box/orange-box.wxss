@@ -1,0 +1,23 @@
+.wb-container {
+  width: 696rpx;
+  border-radius: 36rpx;
+  background-color: #fff;
+}
+
+.wb-header {
+  padding: 54rpx 0 0 28rpx;
+}
+
+.wb-header-line {
+  width: 14rpx;
+  height: 44rpx;
+  margin-right: 18rpx;
+  background-color: #FF8F10;
+  border-radius: 7rpx;
+}
+
+.wb-header-title {
+  color: #FF8F10;
+  font-size: 45rpx;
+  font-weight: bold;
+}

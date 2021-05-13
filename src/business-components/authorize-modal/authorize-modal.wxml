@@ -1,0 +1,10 @@
+<base-modal id='modal' title="{{title}}" hidden="{{hidden}}" needCloseBtn="{{true}}" bind:toggle="close">
+  <view slot="body" class="modal-body">
+    <text class="fc-c0,fs34,content">{{content}}</text>
+    <view class="f-xa-yc" style="width:100%;">
+      <button class="ensure,fs30,fc-t,f-xc-yc" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">
+        好的
+      </button>
+    </view>
+  </view>
+</base-modal>

@@ -1,0 +1,8 @@
+<block wx:if="{{show}}">
+  <view class="box">
+    <image class="no-content-image" src="./images/placeholder_empty_taxation@2x.png"></image>
+  </view>
+  <view class="box" wx:for="{{textList}}" wx:key="index">
+    <text class="no-content-text">{{ item }}</text>
+  </view>
+</block>

@@ -1,0 +1,41 @@
+@import "../../../sass/_common.scss";
+
+.baseContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24rpx;
+
+  .messageConten {
+    width: 100%;
+    display: flex;
+
+    .messageNum {
+      width: 34rpx;
+      height: 32rpx;
+      border-radius: 50%;
+      color: white;
+      background-color: $theme-color;
+      font-size: 26rpx;
+      align-items: center;
+      padding-bottom: 2rpx;
+      justify-content: center;
+      display: flex;
+    }
+
+    .message {
+      color: $color-1a;
+      margin-left: 0rpx;
+      font-size: 30rpx;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+  }
+
+  .describe {
+    margin-top: 16rpx;
+    color: $color-99;
+    font-size: 26rpx;
+  }
+}

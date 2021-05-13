@@ -1,0 +1,200 @@
+@charset "UTF-8";
+.red {
+  color: #ff3333;
+}
+
+.tr {
+  text-align: right;
+}
+
+.pr12 {
+  padding-right: 24rpx;
+}
+
+.ml12 {
+  margin-left: 24rpx;
+}
+
+.underline {
+  width: 100%;
+  height: 2rpx;
+  margin-left: 32rpx;
+  background-color: #e5e5e5;
+  overflow-x: hidden;
+}
+
+.btn-arrow {
+  width: 88rpx;
+  height: 88rpx;
+  max-width: 88rpx;
+  max-height: 88rpx;
+}
+
+.label-text,
+.label-input {
+  padding: 0 60rpx 0 32rpx;
+  box-sizing: border-box;
+}
+
+.label-input input {
+  flex-grow: 1;
+}
+
+.label-text-tip,
+.label-picker-tip {
+  background-color: #ffffff;
+  padding: 0 32rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.expandable-label-text,
+.label-picker {
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+
+.label-picker-body, .label-picker .label-picker-body {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  bottom: constant(safe-area-inset-bottom);
+  bottom: env(safe-area-inset-bottom);
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.label-picker-body .top {
+  padding: 0 32rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+  box-sizing: border-box;
+}
+
+.label-picker-body picker-view, .label-picker .label-picker-body picker-view {
+  width: 100%;
+  height: 452rpx;
+  text-align: center;
+}
+
+.label-picker-body picker-view .year {
+  position: relative;
+}
+
+.label-picker-body picker-view .year::after {
+  content: "年";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 2em), -55%);
+  font-size: 34rpx;
+}
+
+.label-picker-body picker-view .month {
+  position: relative;
+}
+
+.label-picker-body picker-view .month::after {
+  content: "月";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 1.5em), -55%);
+  font-size: 34rpx;
+}
+
+.label-picker-body picker-view .day {
+  position: relative;
+}
+
+.label-picker-body picker-view .day::after {
+  content: "日";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + 1.5em), -55%);
+  font-size: 34rpx;
+}
+
+.label-picker .item {
+  flex-grow: 1;
+  flex-direction: row-reverse;
+}
+
+.label-input-switch_switch {
+  width: 100%;
+  padding: 16rpx 32rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.label-input-switch_switch radio-group label {
+  width: 152rpx;
+  height: 56rpx;
+  text-align: center;
+  line-height: 56rpx;
+}
+
+.label-input-switch_switch radio-group label radio {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.label-input-switch_input {
+  width: 100%;
+  padding: 0 32rpx 22rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.search-label-input {
+  padding: 0 0 0 32rpx;
+  box-sizing: border-box;
+}
+
+.search-label-input .camera {
+  width: 88rpx;
+  height: 88rpx;
+  max-width: 88rpx;
+  max-height: 88rpx;
+}
+
+.search-label-input .search-list {
+  position: absolute;
+  left: 0;
+  width: 524rpx;
+  height: auto !important;
+  max-height: 320rpx;
+  border-radius: 16rpx;
+  background-color: #ffffff;
+  box-shadow: 0 0 16rpx rgba(0, 0, 0, 0.3);
+  transform: translateY(12rpx);
+  z-index: 999;
+  overflow: hidden;
+}
+
+.search-label-input .search-list::before {
+  content: "";
+  position: absolute;
+  left: 28rpx;
+  top: -12rpx;
+  width: 0;
+  height: 0;
+  border: 12rpx solid transparent;
+  border-top: 0 none;
+  border-bottom-color: #ffffff;
+  box-shadow: 0 0 16rpx rgba(0, 0, 0, 0);
+}
+
+.search-label-input .search-list .search-item {
+  width: 100%;
+  min-height: 88rpx;
+  padding: 24rpx 32rpx;
+  line-height: 44rpx;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.search-label-input .search-list .search-item:not(:last-child) {
+  border-bottom: 2rpx solid #e5e5e5;
+}

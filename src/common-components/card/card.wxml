@@ -1,0 +1,42 @@
+<view class="card-view">
+
+  <view class="f-xb-yc,user-data">
+    
+    <view class="fc-c0,left">
+
+      <view class="bold,fs34,name">{{userInfo.userName}}</view>
+      
+      <view class="f-xl-yc">
+        <image src="./images/card_phone@2x.png" class="icon24"></image>
+        
+        <block wx:if="{{userInfo.userPhone}}">
+          <text class="text,fs30,phone">{{userInfo.userPhone}}</text>
+        </block>
+        
+        <block wx:elif="{{isBindPhone}}">
+          <button class="text,fs30,phone" 
+            style="width:120rpx;margin-left:24rpx;"
+            open-type="getPhoneNumber" 
+            bindgetphonenumber="getPhoneNumber">
+            马上绑定
+          </button>
+        </block>
+        
+        <block wx:else>
+          <text class="text,fs30,phone">暂未获取到</text>
+        </block>
+
+      </view>
+
+    </view>
+    
+    <block wx:if="{{!!userInfo.userAvatar}}">
+      <image class="bg100,right" src="{{userInfo.userAvatar}}"></image>
+    </block>
+    <block wx:else>
+      <image class="bg100,right" src="./images/head_client_default@2x.png"></image>
+    </block>
+
+  </view>
+
+</view>

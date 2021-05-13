@@ -1,0 +1,65 @@
+@import '../../sass/_common.scss';
+
+// 拍照识别
+.container {
+
+  // height: inherit;
+  height: 100%;
+  position: relative;
+
+  .photo-area {
+    height: inherit;
+    padding-bottom: 208rpx;
+    box-sizing: border-box;
+
+    camera {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .operation-area {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 208rpx;
+    @include compatible-iphonex-pb();
+    background-color: $black;
+
+    .light {
+      flex-direction: column;
+
+      image {
+        @include size(38rpx, 62rpx);
+        padding-bottom: 22rpx;
+      }
+    }
+
+    .circle {
+      @include size(120rpx, 120rpx);
+      background-color: #808080;
+      border-radius: 50%;
+
+      view {
+        @include size(92rpx, 92rpx);
+        border: 2rpx solid $black;
+        background-color: $white;
+        border-radius: 50%;
+
+        &.active {
+          background-color: #808080;
+        }
+      }
+    }
+
+    .album {
+      flex-direction: column;
+
+      image {
+        @include size(56rpx, 44rpx);
+        padding-bottom: 26rpx;
+      }
+    }
+  }
+}

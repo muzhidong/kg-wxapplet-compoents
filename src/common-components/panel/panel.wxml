@@ -1,0 +1,5 @@
+<view class="box-container">
+  <slot name="title"></slot>
+  <view class="line" hidden="{{isHiddenDivider}}"></view>
+  <slot name="content"></slot>
+</view>

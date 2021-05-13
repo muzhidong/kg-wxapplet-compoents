@@ -1,0 +1,7 @@
+<view class="wb-container">
+  <view class="wb-header,f-xl-yc">
+    <view class="wb-header-line"></view>
+    <view class="wb-header-title">{{title}}</view>
+  </view>
+  <slot></slot>
+</view>

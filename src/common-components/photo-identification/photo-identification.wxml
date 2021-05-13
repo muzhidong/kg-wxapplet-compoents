@@ -1,0 +1,21 @@
+<view class="container">
+  <!-- 拍照识别 -->
+  <view class="photo-area">
+    <camera mode="normal" flash="{{isSwitchOnLight?'on':'off'}}" frame-size="small" resolution="large" device-position="back"></camera>
+  </view>
+  <view class="f-xa-yc,operation-area">
+    <view class="f-xc-yc,light" bindtap="toggleSwitch">
+      <image src="./images/light_{{isSwitchOnLight?'on':'off'}}.svg" />
+      <view class="fs28,fc-cx">{{isSwitchOnLight?'关灯':'开灯'}}</view>
+    </view>
+    <view class="f-xc-yc,circle" bindtap="takePhoto">
+      <view hover-class="active"></view>
+    </view>
+    <view class="f-xc-yc，album" bindtap="choosePhoto">
+      <image src="./images/img_icon.svg" />
+      <view class="fs28,fc-cx">相册</view>
+    </view>
+  </view>
+  <!-- 测试用 -->
+  <!-- <image src="{{pic}}" mode="aspectFit" style="width:100%;border:1rpx solid black;box-sizing:border-box;" /> -->
+</view>

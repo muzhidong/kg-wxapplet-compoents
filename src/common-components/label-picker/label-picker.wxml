@@ -1,0 +1,25 @@
+<view class="f-xl-yc,picker-container">
+  <text class="text,fs30,fc-c0,left">
+    <text class="star,{{required?'inline-block':'none'}}">*</text>
+    <text>{{label}}</text>
+  </text>
+  <view class="text,fs30,fc-c0,right,arrow-btn,{{selected===-1?(validate?'fc-f3':'fc-cc'):'fc-c0'}}" bindtap="switchPopup">{{list[selected - 1] || placeholder}}</view>
+  <view class="line"></view>
+  <view class="window,{{show?'block':'none'}}">
+    <view class="mask" bindtap="switchPopup"></view>
+    <view class="pop-up">
+      <view wx:for="{{list}}" 
+        wx:key="{{index}}" 
+        class="text,fs34,option,{{selected===index + 1?'fc-t':'fc-c1'}}"
+        bindtap="choose"
+        data-index="{{index}}">
+        <text>{{item}}</text>
+        <image src="./images/select_pre_blue@2x.png" class="icon28,{{selected===index + 1?'visible':'hidden'}},"></image>
+      </view>
+      <view class="text,fs30,fc-c1,cancel" bindtap="switchPopup">取消</view>
+    </view>
+  </view>
+</view>
+<!-- 进来时 默认 灰色  有选 黑色
+切换时 有选 黑色
+提交时 没选 红色   -->

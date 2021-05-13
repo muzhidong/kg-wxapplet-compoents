@@ -1,0 +1,26 @@
+<!--pages/image/image.wxml-->
+<block wx:if="{{kind == 1}}">
+  <image-collect bind:onImagesCollectComplete="onComplete"></image-collect>
+</block>
+<block wx:if="{{kind == 2}}">
+  <image-cropper></image-cropper>
+</block>
+<block wx:if="{{kind == 3}}">
+  <view>单图列表：</view>
+  <image-list imgList="{{list1}}"></image-list>
+  <view>双图列表：</view>
+  <image-list imgList="{{list2}}"></image-list>
+  <view>四图列表：</view>
+  <image-list imgList="{{list4}}"></image-list>
+  <view>其他数量图片列表：</view>
+  <image-list imgList="{{list9}}"></image-list>
+</block>
+<block wx:if="{{kind == 4}}">
+  <image-swiper imageList="{{list4}}"></image-swiper>
+</block>
+<block wx:if="{{kind == 5}}">
+  <upload-image auto="{{false}}" isBtnShownBefore="{{false}}"></upload-image>
+</block>
+<block wx:if="{{kind == 6}}">
+  <preview-image src="{{list1[0]}}"></preview-image>
+</block>

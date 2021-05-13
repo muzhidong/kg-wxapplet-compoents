@@ -1,0 +1,48 @@
+<!--pages/box/box.wxml-->
+<view style="height:100%;background-color:#f8f8f8;">
+
+  <block wx:if="{{kind == 1}}">
+    <view>普通标题样式：</view>
+    <standard-box title="这是标题"></standard-box>
+    <view style="margin-bottom:10rpx;"></view>
+
+    <view>推荐标题样式：</view>
+    <standard-box title="这是标题" titleClass="1"></standard-box>
+    <view style="margin-bottom:10rpx;"></view>
+
+    <view>不隐藏竖线：</view>
+    <standard-box title="这是标题" hiddenLine="{{false}}"></standard-box>
+    <view style="margin-bottom:10rpx;"></view>
+    
+    <view>提供插槽：</view>
+    <standard-box title="这是标题">
+      <view slot="rightBtn" class="arrow-btn,right"></view>
+      <view slot="body">这是内容</view>
+    </standard-box>
+  </block>
+
+  <block wx:if="{{kind == 2}}">
+    <panel>
+      <view slot="title">这是标题1</view>
+      <view slot="content">这是内容1</view>
+    </panel>
+    <panel>
+      <view slot="title">这是标题2</view>
+      <view slot="content">这是内容2</view>
+    </panel>
+    <panel isHiddenDivider="{{true}}">
+      <view slot="title">这是标题3</view>
+      <view slot="content">这是内容3</view>
+    </panel>
+  </block>
+  
+  <block wx:if="{{kind == 3}}">
+    <view class="f-xc-yc" style="height:50%;">
+      <orange-box title="这是标题">
+        <view style="padding:20rpx;">
+          <view style="background-color:pink;height:200rpx;">这是内容</view>
+        </view>
+      </orange-box>
+    </view>
+  </block>
+</view>

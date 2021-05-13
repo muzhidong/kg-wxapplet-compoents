@@ -1,0 +1,40 @@
+<view class="personal-card">
+
+  <view class="title f-xl-yc">
+
+    <text class="name fc-t fs34">{{ data.name }}</text>
+    <image mode="aspectFit" src="./images/card_certification@2x.png" class="official-icon" hidden="{{data.isOfficial==1?false:true}}"></image>
+    <text class="fc-c2 fs22">{{ data.isOfficial ? '官方认证' : data.posName }}</text>
+
+    <view wx:if="{{ data.avatar }}" bindtap="avatarTap" class="thumb">
+      <image mode="aspectFit" src="{{ data.avatar }}" class="image"></image>
+      <view wx:if="{{ data.canEditAvatar }}" class="edit-icon f-xc-yc">
+        <image mode="aspectFit" src="./images/edit_new@2x.png" class="icon"></image>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="phone-box f-xl-yc">
+    <image mode="aspectFit" src="./images/card_phone@2x.png" class="phone-icon"></image>
+    <text class="phone">{{ data.phone }}</text>
+    <slot name="dialBtn" />
+  </view>
+
+  <view class="label-box f-xl-yc fc-c1 fs26">
+    <image mode="aspectFit" src="./images/icon_label@2x.png" class="label-icon"></image>
+    <text wx:for="{{ data.label }}" wx:key="index" class="label">
+      <text class="label-text">{{ item }}</text>
+    </text>
+    <slot name="labelBtn" />
+  </view>
+
+  <view class="company-box f-xl-yt" hidden="{{hiddenComp}}">
+    <image mode="aspectFit" src="./images/icon_company@2x.png" class="company-icon"></image>
+    <text class="fs26 fc-c1 line-clamp2">{{ data.company }}</text>
+  </view>
+
+  <view class="hr"></view>
+  <slot name="bottomBox" />
+
+</view>

@@ -1,0 +1,9 @@
+<view class="baseContainer">
+    <view class="messageConten,f-xl-yc" >
+        <view class="messageNum">{{num}}</view>
+        <view class="message">{{title}}</view>
+    </view>
+    <view class="describe">
+        <slot name="des"></slot>
+    </view>
+</view>

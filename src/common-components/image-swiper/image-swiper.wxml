@@ -1,0 +1,30 @@
+<view class="image-swiper-box">
+
+  <swiper 
+    current="{{ currentIndex }}"
+    bindchange="change"
+    style="height: {{ height }}"
+    autoplay="{{ autoplay }}"
+    interval="{{ interval }}"
+    circular="{{ circular }}"
+    class="image-swiper">
+    <swiper-item 
+      wx:for="{{ imageList }}" 
+      wx:key="index"
+      class="bgct">
+      <image
+        mode="aspectFill"
+        src="{{ item }}" class="company-icon"></image>
+    </swiper-item>
+  </swiper>
+
+  <view 
+    wx:if="{{ showDot }}"
+    class="dot-box">
+    <view 
+      wx:for="{{ imageList }}"
+      wx:key="index"
+      class="dot {{ index === swiperIndex ? 'active' : '' }}"></view>
+  </view>
+  
+</view>

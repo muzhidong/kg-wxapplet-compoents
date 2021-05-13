@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "label-input": "/common-components/label-input/label-input",
+    "label-picker": "/common-components/label-picker/label-picker",
+    "label-textarea": "/common-components/label-textarea/label-textarea",
+    "select-box": "/common-components/select-box/select-box"
+  }
+}

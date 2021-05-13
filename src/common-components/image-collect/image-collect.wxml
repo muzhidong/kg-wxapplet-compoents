@@ -1,0 +1,23 @@
+<view class="cardAllView">
+
+  <block wx:for="{{images}}" wx:key="index">
+    <view class="imagebgView"  >
+        <image class="mainImage" 
+          src="{{item}}" 
+          bind:tap="bindtapImage" 
+          data-param="{{item}}"  
+          mode="aspectFill"/>
+        <image class="deleteImage" 
+          src="./images/icon_delete@2x.png" 
+          bind:tap= "deleteImage" 
+          data-param= "{{item}}"/>
+    </view>
+  </block>
+
+  <view class="imagebgView" 
+    style="{{hiddenChoose? 'display:none !important': ''}}" 
+    bind:tap="chooseImageFromPhone">
+    <image class="camera" src="./images/camera@2x.png"/>
+  </view>
+
+</view>

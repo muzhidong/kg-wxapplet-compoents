@@ -1,0 +1,19 @@
+<view class="video-container">
+<block wx:if="{{play}}">
+  <video 
+    id="video-{{index}}"
+    src="{{videoUrl}}" 
+    poster="{{poster}}"
+    object-fit="contain"
+    show-center-play-btn="{{false}}" 
+    bindplay="controlPlay"
+    bindended="init"
+    binderror="videoErrorCb"
+    style="width:{{width}};height:{{height}};" />
+</block>
+<block wx:else>
+  <view style="width:{{width}};height:{{height}};background-image:url({{poster}});background-size:cover;position:relative;" bindtap="click">
+    <image src="./images/headline_play@2x.png" class="icon48" />
+  </view>
+</block>
+</view>

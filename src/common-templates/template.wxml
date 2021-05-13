@@ -1,0 +1,478 @@
+<!-- 下划线 start -->
+<template name="line">
+  <view class="underline"></view>
+</template>
+<!-- 下划线 end -->
+
+
+<!-- 标签文本模板 start -->
+<!-- 可传入参数：
+      标签名label
+      文本value
+      字段名称name
+      是否隐藏底部横线hiddenUnderLine
+      是否左对齐tl
+      是否显示红点redDot（左对齐方式有）
+      设置背景色bgCol，常用于置灰（左对齐方式有）
+      提示文字placeholder，一般rightBtnEvtName一起使用（左对齐方式有）
+      绑定右箭头图标点击事件名rightBtnEvtName （左对齐方式有）-->
+<template name="kg-text">
+  <block wx:if="{{tl}}">
+    <!-- 内容左对齐模式 -->
+    <view class="fs30,bar"
+          style="box-sizing:border-box;{{bgCol?'padding:16rpx;':'padding:0 16rpx;'}}">
+      <view class="f-xl-yc"
+            style="height:100%;padding:0 16rpx;box-sizing:border-box;{{bgCol?'border-radius:8rpx;background-color:' + bgCol:''}}">
+        <label class="{{invalid? 'red': ''}},fc-c1"
+               style="width:160rpx;">
+          <text hidden="{{!redDot}}"
+                style="color:#FF3333;">*</text>
+          {{label}}
+        </label>
+        <view class="f-xb-yc ml12"
+              style="flex-grow:1;height:inherit;"
+              bindtap="{{disabled? '' : rightBtnEvtName || ''}}">
+          <view class="{{value? 'fc-c0': 'fc-cc'}}">{{value? value: placeholder}}</view>
+          <input type="text"
+                 hidden="{{true}}"
+                 name="{{name}}"
+                 value="{{value}}" />
+          <view hidden="{{!rightBtnEvtName}}"
+                class="arrow-btn,right"
+                style="padding:20rpx 0;"></view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <!-- 内容右对齐模式 -->
+    <view class="f-xb-yc,bar,fs30,fc-c0,label-text">
+      <label>{{label}}</label>
+      <text>{{value}}</text>
+      <input type="text"
+             hidden="{{true}}"
+             name="{{name}}"
+             value="{{value}}" />
+    </view>
+  </block>
+  <view class="fs22 fc-b1 label-text-tip" wx:if="{{tip}}">{{tip}}</view>
+  <block wx:if="{{!hiddenUnderLine}}">
+    <template is="line"></template>
+  </block>
+</template>
+<!-- 标签文本模板 end -->
+
+
+<!-- 标签输入模板 start -->
+<!-- 可传入参数：
+      键名name
+      标签名label
+      是否隐藏底部横线hiddenUnderLine
+      输入框必要参数，如type/value/placeholder/maxlength等等 -->
+<template name="kg-input">
+  <block wx:if="{{tl}}">
+    <!-- 内容左对齐模式 -->
+    <view class="f-xl-yc,bar,fs30,fc-c0,label-input"
+          style="{{!!rightBtnEvtName?'padding-right:0;':''}}">
+      <label class="{{invalid?'red':''}},fc-c1"
+             style="width:160rpx;">
+        <text hidden="{{!redDot}}"
+              style="color:#FF3333;">*</text>
+        {{label}}
+      </label>
+      <view class="f-xb-yc ml12"
+            style="flex-grow:1;height:inherit;">
+        <input name="{{name}}"
+               type="{{type}}"
+               value="{{value}}"
+               maxlength="{{maxlength || -1}}"
+               placeholder="{{placeholder}}"
+               placeholder-class="fc-cc"
+               style="text-overflow: ellipsis;height:inherit;"
+               bindfocus="_onInputFocus"
+               data-field="{{name}}"
+               data-index="{{index}}"
+               bindinput="{{inputEvtName}}"
+               disabled="{{disabled}}" />
+        <view hidden="{{!rightBtnEvtName}}"
+              class="arrow-btn,right,btn-arrow"
+              bindtap="{{disabled? '' : rightBtnEvtName || ''}}"></view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <!-- 内容右对齐模式 -->
+    <view class="f-xb-yc,bar,fs30,fc-c0,label-input">
+      <label class="{{invalid?'red':''}}">
+        <text hidden="{{!redDot}}"
+              style="color:#FF3333;padding-right:.5em;">*</text>
+        {{label}}
+      </label>
+      <input name="{{name}}"
+             type="{{type}}"
+             value="{{value}}"
+             maxlength="{{maxlength || -1}}"
+             placeholder="{{placeholder}}"
+             placeholder-class="tr"
+             class="tr"
+             bindfocus="_onInputFocus"
+             data-field="{{name}}"
+             data-index="{{index}}" />
+    </view>
+  </block>
+  <block wx:if="{{!hiddenUnderLine}}">
+    <template is="line"></template>
+  </block>
+</template>
+<!-- 标签输入模板 end -->
+
+
+<!-- 标签选择器模板 start -->
+<!-- 可传入参数：
+      键名name
+      标签名label
+      是否隐藏底部横线hiddenUnderLine
+      选择器必要参数，如mode/各模式下相关的参数 -->
+<template name="kg-picker">
+  <!-- 单列选择器 -->
+  <block wx:if="{{mode === 'selector'}}">
+    <picker name="{{name}}"
+            mode="selector"
+            range="{{range}}"
+            value="{{value === undefined ? -1 : value}}"
+            bindchange="_onPickerChange"
+            data-mode="{{mode}}"
+            data-field="{{name}}"
+            data-index="{{index}}">
+      <view class="f-xb-yc,bar,fs30,fc-c0,label-picker">
+        <block wx:if="{{tl}}">
+          <!-- 内容左对齐 -->
+          <label class="{{invalid?'red':''}},fc-c1"
+                 style="width:160rpx;"
+                 hidden="{{!!bgCol}}">
+            <text hidden="{{!redDot}}"
+                  style="color:#FF3333;">*</text>
+            {{label}}
+          </label>
+          <view class="f-xb-yc,{{bgCol?'':'ml12'}}"
+                style="flex-grow:1;{{bgCol?'padding:6rpx 12rpx 8rpx 24rpx;border-radius:8rpx;background-color:' + bgCol:''}}">
+            <view class="{{range[value]? '': 'fc-cc'}}">
+              {{range[value]? range[value]: placeholder}}
+            </view>
+            <view class="arrow-btn,right"></view>
+          </view>
+        </block>
+        <block wx:else>
+          <!-- 内容右对齐 -->
+          <label class="{{invalid?'red':''}}">
+            <text hidden="{{!redDot}}"
+                  style="color:#FF3333;padding-right:.5em;">*</text>
+            {{label}}
+          </label>
+          <view class="f-xl-yc,item">
+            <view class="arrow-btn,right"></view>
+            <view class="pr12,{{range[value]? '': 'fc-cc'}}">
+              {{range[value]? range[value]: placeholder}}
+            </view>
+          </view>
+        </block>
+      </view>
+    </picker>
+  </block>
+  <!-- 日期选择器 -->
+  <block wx:elif="{{mode === 'date'}}">
+    <picker name="{{name}}"
+            mode="date"
+            value="{{value}}"
+            start="{{tool.start}}"
+            end="{{tool.end}}"
+            fields="{{fields || name}}"
+            bindchange="_onPickerChange"
+            data-mode="{{mode}}"
+            data-field="{{name}}"
+            data-index="{{index}}">
+      <view class="f-xb-yc,bar,fs30,fc-c0,label-picker">
+        <label class="{{invalid?'red':''}}">{{label}}</label>
+        <view class="f-xl-yc,item">
+          <view class="arrow-btn,right"></view>
+          <view class="pr12,{{value == undefined  ? 'fc-cc' : ''}}">
+            <block wx:if="{{value == undefined}}">{{placeholder}}</block>
+            <block wx:else>{{tool.format(value)}}</block>
+          </view>
+        </view>
+      </view>
+    </picker>
+  </block>
+  <!-- 地区选择器 -->
+  <block wx:elif="{{mode === 'region'}}">
+    <picker name="{{name}}"
+            value="{{tool.checkType(value) === 'object' ? value : ''}}"
+            mode="region"
+            bindchange="_onPickerChange"
+            bindcancel="_onPickerClose"
+            data-mode="{{mode}}"
+            data-field="{{name}}"
+            data-index="{{index}}">
+      <view class="f-xb-yc,bar,fs30,fc-c0,label-picker">
+        <block wx:if="{{tl}}">
+          <label class="{{invalid?'red':''}},fc-c1"
+                 style="width:160rpx;">
+            <text hidden="{{!redDot}}"
+                  style="color:#FF3333;">*</text>
+            {{label}}
+          </label>
+          <view class="f-xb-yc,ml12"
+                style="flex-grow:1;">
+            <view class="pr12,{{value == undefined || value == ''? 'fc-cc' : ''}}">
+              <block wx:if="{{value == undefined || value == ''}}">{{placeholder}}</block>
+              <block wx:elif="{{tool.checkType(value) === 'object'}}">{{value[0] + value[1] + value[2]}}</block>
+              <block wx:else>{{value}}</block>
+            </view>
+            <view class="arrow-btn,right"></view>
+          </view>
+        </block>
+        <block wx:else>
+          <label class="{{invalid?'red':''}}">{{label}}</label>
+          <view class="f-xl-yc">
+            <view class="pr12,{{value == undefined  ? 'fc-cc' : ''}}">
+              <block wx:if="{{value == undefined}}">{{placeholder}}</block>
+              <block wx:elif="{{tool.checkType(value) === 'object'}}">{{value[0] + value[1] + value[2]}}</block>
+              <block wx:else>{{value}}</block>
+            </view>
+            <view class="arrow-btn,right"></view>
+          </view>
+        </block>
+      </view>
+    </picker>
+  </block>
+  <view class="fs22 fc-b1 label-picker-tip" wx:if="{{tip}}">{{tip}}</view>
+  <block wx:if="{{!hiddenUnderLine}}">
+    <template is="line"></template>
+  </block>
+</template>
+<!-- JS处理 -->
+<wxs module="tool">
+
+  var checkType = function(value){
+    return typeof value;
+  }
+
+  var format = function(value){
+    if(typeof value !== 'string'){
+      return;
+    }
+    var arr = value.split('-');
+    if(arr.length === 3){
+      return arr[0] + '年' + arr[1] + '月' + arr[2] + '日';
+    }else if(arr.length === 2 ){
+      return arr[0] + '年' + arr[1] + '月' ;
+    }else if(arr.length === 1){
+      return arr[0] + '年' ;
+    }
+  }
+
+  module.exports = {
+    start:'1970-01-01',
+    end:'2050-12-31',
+    checkType:checkType,
+    format:format,
+  }
+</wxs>
+<!-- 标签选择器模板 end -->
+
+
+<!-- 标签输入开关模板 start -->
+<!-- 可传入参数：
+      键名name
+      标签名label
+      是否隐藏底部横线hiddenUnderLine
+      开关相关参数如选中值checked、选项数组option、开关变化事件bindChange
+      输入框相关参数如类型type、提示placeholder
+      是否隐藏输入框hiddenInput -->
+<template name="kg-switch">
+  <view class="f-xb-yc,fs30,fc-c0,label-input-switch_switch">
+    <label class="{{invalid?'red':''}}">{{label}}</label>
+    <radio-group name="{{name}}"
+                 class="fs26,f-xc-yc"
+                 bindchange="_onSwitchChange"
+                 data-field="{{name}}"
+                 data-index="{{index}}">
+      <label class="{{checked===option[0]?'fc-cx':'fc-t'}}"
+             style="background-color:{{checked===option[0]?'#3399FF':'#e4f1ff'}};">
+        <radio value="{{option[0]}}"
+               checked="{{checked===option[0]}}" />
+        {{option[0]}}
+      </label>
+      <label class="{{checked!==option[0]?'fc-cx':'fc-t'}}"
+             style="background-color:{{checked!==option[0]?'#3399FF':'#e4f1ff'}};">
+        <radio value=""
+               checked="{{checked!==option[0]}}" />
+        {{option[1]}}
+      </label>
+    </radio-group>
+  </view>
+  <view class="fs30,fc-c0,label-input-switch_input"
+        hidden="{{!hiddenInput}}">
+    <input name="{{name}}_inputSwitchValue"
+           type="{{type}}"
+           placeholder="{{placeholder}}"
+           placeholder-class="fs30,fc-cc"
+           value="{{inputValue}}"
+           bindfocus="_onInputFocus"
+           data-field="{{name}}"
+           data-index="{{index}}"
+           maxlength="{{maxLength || -1}}" />
+  </view>
+  <block wx:if="{{!hiddenUnderLine}}">
+    <template is="line"></template>
+  </block>
+</template>
+<!-- 标签输入开关模板 end -->
+
+
+<!-- 标签可扩展文本模板 start -->
+<!-- 可传入参数：
+      标签名label
+      文本value
+      默认是否展开isExpand
+      展开项items = [{template,该模板必要参数}] -->
+<template name="kg-expandable-text">
+  <view class="f-xb-yc,bar,fs30,fc-c0,expandable-label-text"
+        bindtap="_toggleTextExpand"
+        data-field="{{name}}">
+    <label class="{{invalid?'red':''}}">{{label}}</label>
+    <view class="f-xl-yc">
+      <text class="pr12">{{value}}</text>
+      <view class="arrow-btn,{{isExpand?'up':'down'}}"></view>
+    </view>
+  </view>
+  <view hidden="{{!isExpand}}"
+        style="background-color:white;">
+    <block wx:for="{{items}}"
+           wx:key="index">
+      <block wx:if="{{item.template}}">
+        <template is="{{item.template}}"
+                  data="{{...item,index,name}}"></template>
+      </block>
+    </block>
+  </view>
+</template>
+<!-- 标签可扩展文本模板 end -->
+
+
+<!-- 标签可扩展选择器模板 start -->
+<!-- 可传入参数：由三部分组成，
+      第一部分：当前字段名field、是否展开标志isExpand
+      第二部分：选择器信息picker，具体参数见带标签的选择器
+      第三部分：展开项items = [{template,该模板必要参数}] -->
+<template name="kg-expandable-picker">
+  <template is="kg-picker"
+            data="{{...picker,name}}"></template>
+  <view hidden="{{isExpand}}"
+        style="background-color:white;"></view>
+  <view hidden="{{!isExpand}}"
+        style="background-color:white;">
+    <block wx:for="{{items}}"
+           wx:key="index">
+      <block wx:if="{{item.template}}">
+        <template is="{{item.template}}"
+                  data="{{...item,name,index}}"></template>
+      </block>
+    </block>
+  </view>
+  <!-- 根据不同选项值展示不同模板 -->
+</template>
+<!-- 标签可扩展选择器模板 end -->
+
+
+<!-- 支持搜索的标签输入模板 start -->
+<!-- 可传入参数：
+      用于校验的是否显示红星提示redhot
+      标签名称label
+      表单字段name
+      input组件支持的属性type\value\maxlength\placeholder\
+      搜索列表数据获取的方法名称searchListDataGotMethodName
+      是否隐藏下划线hiddenUnderLine
+      要显示的图标点击事件名称picEvtName
+      要显示的图标地址picUrl
+      右箭头点击事件名称rightBtnEvtName
+      模板在数组数据模板中的索引index -->
+<template name="kg-search-input">
+  <view class="f-xl-yc,bar,fs30,fc-c0,search-label-input">
+    <label class="{{invalid?'red':''}},fc-c1"
+           style="width:160rpx;">
+      <text hidden="{{!redDot}}"
+            style="color:#FF3333;">*</text>
+      {{label}}
+    </label>
+    <view class="f-xl-yc"
+          style="flex-grow:1;height:inherit;">
+      <view style="position:relative;flex-grow:1;height:inherit;">
+        <input name="{{subField?name+'['+index+'].'+subField:name}}"
+               type="{{type}}"
+               value="{{value}}"
+               maxlength="{{maxlength || -1}}"
+               placeholder="{{placeholder}}"
+               placeholder-class="fc-cc"
+               class="ml12"
+               style="text-overflow: ellipsis;height:inherit;"
+               bindinput="_fuzzyQuery"
+               bindfocus="_onFocusOrBlur"
+               bindblur="_onFocusOrBlur"
+               data-method="{{searchListDataGotMethodName}}"
+               data-field="{{name}}"
+               data-index="{{index}}"
+               disabled="{{disabled}}" />
+        <block wx:if="{{!hiddenSearchList && queryResult && queryResult.length > 0}}">
+          <scroll-view scroll-y="{{true}}"
+                       class="search-list">
+            <view class="fs30,fc-c0,search-item"
+                  wx:for="{{queryResult}}"
+                  wx:key="index"
+                  wx:for-index="i"
+                  bindtap="_onSelected"
+                  data-selectedIdx="{{i}}"
+                  data-field="{{name}}"
+                  data-idx="{{index}}">{{item}}</view>
+          </scroll-view>
+        </block>
+        <block wx:elif="{{!hiddenSearchList && name == 'acquiringCompany' && isEmpty}}">
+          <template is="acquiring-company"
+                    data="{{name,index}}"></template>
+        </block>
+      </view>
+      <view class="f-xl-yc"
+            style="height:inherit;box-sizing:borer-box;"
+            bindtap="{{disabled? '': picEvtName}}"
+            hidden="{{!picEvtName}}">
+        <image src="{{picUrl}}"
+               mode="aspectFill"
+               class="camera" />
+      </view>
+      <view class="arrow-btn,right,btn-arrow"
+            hidden="{{!rightBtnEvtName}}"
+            bindtap="{{disabled? '': rightBtnEvtName}}"
+            data-field="{{name}}"
+            data-index="{{index}}"></view>
+    </view>
+  </view>
+  <block wx:if="{{!hiddenUnderLine}}">
+    <template is="line"></template>
+  </block>
+</template>
+<!-- 支持搜索的标签输入模板 end -->
+
+
+<!-- 购方单位搜索结果的的空模板 start -->
+<template name="acquiring-company">
+  <view class="search-list,fs30">
+    <view class="fc-c0,search-item,f-xc-yc">没有找到对应企业</view>
+    <view class="fc-t,search-item,f-xc-yc"
+          bindtap="toAdd"
+          data-mode="add"
+          data-field="{{name}}"
+          data-index="{{index}}">去新增购方单位</view>
+  </view>
+</template>
+<!-- 购方单位搜索结果的的空模板 end -->
+

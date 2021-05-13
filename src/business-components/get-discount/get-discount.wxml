@@ -1,0 +1,28 @@
+<view class="f-xb-yc,discount" hidden="{{hidden}}">
+  <!-- 名片 -->
+  <view class="f-xl-yc" bindtap="toCard">
+    <image src="{{portrait}}" 
+      class="icon80" 
+      style="{{isImgErr?'background-color:#333;':''}}" 
+      binderror="onImageLoadError" />
+    <view class="f-xl-yl,discount-left">
+      <text class="fs34,fc-c0,discount-left-name">{{name}}</text>
+      <text class="fs26,fc-c2" style="white-space:nowrap;">查看ta的名片</text>
+    </view>
+  </view>
+  <!-- 打电话 -->
+  <button bindtap="call">
+    <image src="./images/message_phone@2x.png" class="icon48" />
+  </button>
+  <!-- 聊天 -->
+  <button bindtap="toChat">
+    <image src="./images/share_chat@2x.png" class="icon48" />
+  </button>
+  <!-- 获取优惠 -->
+  <button class="fs26,discount-right" 
+    open-type="{{btnOpenType}}" 
+    bindgetphonenumber="openDiscountDialog" 
+    bindtap="openDiscountDialog">
+    {{btnText}}
+  </button>
+</view>

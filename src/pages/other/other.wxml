@@ -1,0 +1,76 @@
+<!--pages/other/other.wxml-->
+<nav-bar bind:goBack="goBack">
+  <block wx:if="{{kind == 5}}">
+    <view>这是标题自定义区域</view>
+  </block>
+  <block wx:else>
+    <view>公瑾组件库</view>
+  </block>
+</nav-bar>
+
+<view style="position:absolute;top:88px;left:0;width:100%;{{kind == 4?'background-color:white;padding:20rpx;box-sizing:border-box;':''}}">
+  <block wx:if="{{kind == 1}}">
+    <view style="padding:20rpx;">
+      <view>三个按钮：</view>
+      <button-group btnArr="{{btnList}}" bind:one="one" bind:two="two" bind:three="three"></button-group>
+      <view style="height:100rpx;"></view>
+      <view>两个按钮：</view>
+      <button-group btnArr="{{btnList2}}" bind:one="one" bind:two="two"></button-group>
+      <view style="height:100rpx;"></view>
+      <view>两个按钮(隐藏下划线)：</view>
+      <button-group btnArr="{{btnList2}}" hiddenUnderline="{{true}}" bind:one="one" bind:two="two"></button-group>
+    </view>
+  </block>
+
+  <block wx:if="{{kind == 2}}">
+    <tip-header title="某标题" tip="{{ {text:'提示内容'} }}" bind:onTapTip="open"></tip-header>
+    <view style="height:100rpx;"></view>
+    <tip-header title="某标题" tip="{{ {text:'提示内容'} }}" isCloseToTitle="{{true}}" bind:onTapTip="open"></tip-header>
+    <view style="height:100rpx;"></view>
+    <tip-header title="某标题" tip="{{ {text:'提示内容'} }}" isShowQuestionMark="{{true}}" bind:onTapTip="open"></tip-header>
+  </block>
+
+  <block wx:if="{{kind == 3}}">
+    <nav-pager navList="{{navlist}}" bindchange="change"></nav-pager>
+    <view style="height:100rpx;"></view>
+    <nav-pager navList="{{navlist2}}" bindchange="change"></nav-pager>
+  </block>
+
+  <block wx:if="{{kind == 4}}">
+    <link-view imgUrl="{{imgUrl}}" textContent="{{textContent}}" bind:onTapLink="open"></link-view>
+    <view style="height:20rpx;"></view>
+    <link-view textContent="{{textContent2}}" bind:onTapLink="open"></link-view>
+  </block>
+
+  <block wx:if="{{kind == 5}}">
+    <!-- 自定义导航栏 -->
+  </block>
+
+  <block wx:if="{{kind == 6}}">
+    <no-content textList="{{textList}}"></no-content>
+  </block>
+
+  <block wx:if="{{kind == 7}}">
+    <num-header num="1" title="标题1">
+      <view slot="des" style="background-color:white;">这是描述1</view>
+    </num-header>
+    <num-header num="2" title="标题2">
+      <view slot="des" style="background-color:white;">这是描述2</view>
+    </num-header>
+    <num-header num="3" title="标题3">
+      <view slot="des" style="background-color:white;">这是描述3</view>
+    </num-header>
+  </block>
+
+  <block wx:if="{{kind == 8}}">
+    <video-view 
+      videoUrl="https://crm.kungeek.com/cardgram/crm/common/getVideo/h0000000000000378728727821983744/h0000000000000379287993609232386.mp4" 
+      poster="https://crm.kungeek.com/cardgram/crm/common.do?showHtPic&fileId=h0000000000000378728919627505664">
+    </video-view>
+  </block>
+
+  <block wx:if="{{kind == 9}}">
+    <get-discount id="discount"></get-discount>
+  </block>
+</view>
+

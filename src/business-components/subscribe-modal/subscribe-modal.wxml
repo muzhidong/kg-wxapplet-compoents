@@ -1,0 +1,8 @@
+<base-modal hidden="{{hidden}}">
+  <view slot="body" class="f-xc-yc" style="flex-direction:column;padding:0 8rpx">
+    <image src="./images/pop_subscribe@2x.png" mode="aspectFill" class="subscribe-icon" />
+    <view class="fc-c0,fs30" style="line-height:44rpx;">{{title}}</view>
+    <view class="fc-c1,fs30" style="line-height:44rpx;">{{subTitle}}</view>
+    <button bindtap="subscribe" class="kg-btn primary" style="margin-top:32rpx;width:100%;">好的</button>
+  </view>
+</base-modal>

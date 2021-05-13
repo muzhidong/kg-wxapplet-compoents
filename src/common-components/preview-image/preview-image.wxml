@@ -1,0 +1,3 @@
+<view class="f-xc-yc,full" bind:touchmove="onTouchmove" bind:touchstart="onTouchstart" bind:touchend="onTouchend" bind:longpress="onPreviewImage">
+		<image src="{{src}}" mode="aspectFit" class="{{orientation == 'portrait'?'':'full'}}" style="width:100%;transform:translate({{offsetX}}px,{{offsetY}}px) scale({{scale}})" />
+</view>

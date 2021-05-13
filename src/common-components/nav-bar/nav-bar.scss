@@ -1,0 +1,38 @@
+@import '../../../sass/_common.scss';
+
+page{
+	overflow-y: hidden;
+}
+
+.navbar{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	background-color: $white;
+	z-index: 2147483647;
+
+	.navbar-btn{
+		height: inherit;
+
+		&::after{
+			width: 8.49px;
+			height: 8.49px;
+			border-width:4rpx;
+			border-color: $black $black transparent transparent;
+		}
+	}
+
+	.navbar-title{
+
+		color:$color-1a;
+		font-weight: 500;
+
+		&.center{
+			position: absolute;
+			left:50%;
+			transform: translateX(-50%);
+		}
+	
+	}
+}

@@ -1,0 +1,16 @@
+<view class="f-xl-yc,input-container">
+  <text class="text,fs30,fc-c0,left">
+    <text class="star,{{required?'inline-block':'none'}}">*</text>
+    <text>{{label}}</text>
+  </text>
+  <input
+    class="text,fs30,fc-c0,right" 
+    placeholder="{{placeholder}}" 
+    placeholder-class="{{validate?'ph2':'ph1'}}" 
+    cursor-spacing="90"
+    adjust-position="false"
+    value="{{text}}"
+    type="{{type}}"
+    bindblur="blur" />
+  <view class="line"></view>
+</view>

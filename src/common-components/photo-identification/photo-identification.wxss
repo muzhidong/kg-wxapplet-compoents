@@ -1,0 +1,74 @@
+.container {
+  height: 100%;
+  position: relative;
+}
+
+.container .photo-area {
+  height: inherit;
+  padding-bottom: 208rpx;
+  box-sizing: border-box;
+}
+
+.container .photo-area camera {
+  width: 100%;
+  height: 100%;
+}
+
+.container .operation-area {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 208rpx;
+  padding-bottom: 0rpx;
+  padding-bottom: calc(0rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(0rpx + env(safe-area-inset-bottom));
+  background-color: #000000;
+}
+
+.container .operation-area .light {
+  flex-direction: column;
+}
+
+.container .operation-area .light image {
+  width: 38rpx;
+  height: 62rpx;
+  max-width: 38rpx;
+  max-height: 62rpx;
+  padding-bottom: 22rpx;
+}
+
+.container .operation-area .circle {
+  width: 120rpx;
+  height: 120rpx;
+  max-width: 120rpx;
+  max-height: 120rpx;
+  background-color: #808080;
+  border-radius: 50%;
+}
+
+.container .operation-area .circle view {
+  width: 92rpx;
+  height: 92rpx;
+  max-width: 92rpx;
+  max-height: 92rpx;
+  border: 2rpx solid #000000;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.container .operation-area .circle view.active {
+  background-color: #808080;
+}
+
+.container .operation-area .album {
+  flex-direction: column;
+}
+
+.container .operation-area .album image {
+  width: 56rpx;
+  height: 44rpx;
+  max-width: 56rpx;
+  max-height: 44rpx;
+  padding-bottom: 26rpx;
+}

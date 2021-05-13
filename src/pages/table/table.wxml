@@ -1,0 +1,4 @@
+<!--pages/table/table.wxml-->
+<block wx:if="{{kind == 1}}">
+  <table table="{{tableData}}"></table>
+</block>

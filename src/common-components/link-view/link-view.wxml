@@ -1,0 +1,6 @@
+<view class="link-view-container" bindtap="onTapLink">
+  <block wx:if="{{!!imgUrl}}">
+    <image src="{{imgUrl}}" class="icon80"></image>
+  </block>
+  <text class="fs26,fc-c2,line-clamp2,pl16">{{textContent}}</text>
+</view>

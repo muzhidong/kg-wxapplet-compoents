@@ -1,0 +1,39 @@
+.baseContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24rpx;
+}
+
+.baseContainer .messageConten {
+  width: 100%;
+  display: flex;
+}
+
+.baseContainer .messageConten .messageNum {
+  width: 34rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  color: white;
+  background-color: #3399ff;
+  font-size: 26rpx;
+  align-items: center;
+  padding-bottom: 2rpx;
+  justify-content: center;
+  display: flex;
+}
+
+.baseContainer .messageConten .message {
+  color: #1a1a1a;
+  margin-left: 0rpx;
+  font-size: 30rpx;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.baseContainer .describe {
+  margin-top: 16rpx;
+  color: #999999;
+  font-size: 26rpx;
+}

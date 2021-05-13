@@ -1,0 +1,216 @@
+@import "../sass/_common.scss";
+
+// ----- 共用样式 start ----- 
+.red {
+  color: #ff3333;
+}
+
+.tr {
+  text-align: right;
+}
+
+.pr12 {
+  padding-right: 24rpx;
+}
+
+.ml12 {
+  margin-left: 24rpx;
+}
+
+.underline {
+  width: 100%;
+  height: 2rpx;
+  margin-left: 32rpx;
+  background-color: $color-e5;
+  overflow-x: hidden;
+}
+
+.btn-arrow{
+  @include size(88rpx,88rpx);
+}
+// ----- 共用样式 end ----- 
+
+// -----  标签输入模板及标签文本模板样式 start ----- 
+.label-text,
+.label-input {
+  padding: 0 60rpx 0 32rpx;
+  box-sizing: border-box;
+}
+
+.label-input input {
+  flex-grow: 1;
+}
+// -----  标签输入模板及标签文本模板样式 end ----- 
+
+// --- 标签选择器模板及标签文本模板样式 start ---
+.label-text-tip,
+.label-picker-tip{
+  background-color: $white;
+  padding: 0 32rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+// --- 标签选择器模板及标签文本模板样式 end ---
+
+// --- 标签选择器模板及可扩展标签文本模板样式 start ---
+.expandable-label-text,
+.label-picker {
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+
+.label-picker-body {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  bottom: constant(safe-area-inset-bottom);
+  bottom: env(safe-area-inset-bottom);
+  width: 100%;
+  background-color: $white;
+
+  .top {
+    padding: 0 32rpx;
+    border-bottom: 2rpx solid $color-e5;
+    box-sizing: border-box;
+  }
+
+  picker-view {
+    width: 100%;
+    height: 452rpx;
+    text-align: center;
+
+    .year {
+      position: relative;
+
+      &::after {
+        content: "年";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(calc(-50% + 2em), -55%);
+        font-size: 34rpx;
+      }
+    }
+
+    .month {
+      position: relative;
+
+      &::after {
+        content: "月";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(calc(-50% + 1.5em), -55%);
+        font-size: 34rpx;
+      }
+    }
+
+    .day {
+      position: relative;
+
+      &::after {
+        content: "日";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(calc(-50% + 1.5em), -55%);
+        font-size: 34rpx;
+      }
+    }
+  }
+}
+
+.label-picker {
+  .item {
+    flex-grow: 1;
+    flex-direction: row-reverse;
+  }
+
+  .label-picker-body {
+    @extend .label-picker-body;
+  }
+}
+// -----  标签选择器模板及可扩展标签文本模板样式 end ----- 
+
+// ----- 标签输入开关模板样式 start ----- 
+.label-input-switch_switch {
+  width: 100%;
+  padding: 16rpx 32rpx;
+  box-sizing: border-box;
+  background-color: $white;
+
+  radio-group {
+    label {
+      @include size(152rpx, 56rpx, "no");
+      text-align: center;
+      line-height: 56rpx;
+
+      radio {
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.label-input-switch_input {
+  width: 100%;
+  padding: 0 32rpx 22rpx;
+  box-sizing: border-box;
+  background-color: $white;
+}
+// -----  标签输入开关模板样式 end ----- 
+
+//-----  支持搜索标签输入模板样式 start ----- 
+.search-label-input {
+  padding: 0 0 0 32rpx;
+  box-sizing: border-box;
+
+
+  .camera {
+    @include size(88rpx, 88rpx);
+  }
+
+  .search-list {
+    position: absolute;
+    left: 0;
+    width: 524rpx;
+    height: auto !important;
+    max-height: 320rpx;
+    border-radius: 16rpx;
+    background-color: $white;
+    box-shadow: 0 0 16rpx rgba(0, 0, 0, 0.3);
+    transform: translateY(12rpx);
+    z-index: 999;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 28rpx;
+      top: -12rpx;
+      width: 0;
+      height: 0;
+      border: 12rpx solid transparent;
+      border-top: 0 none;
+      border-bottom-color: $white;
+      box-shadow: 0 0 16rpx rgba(0, 0, 0, 0);
+    }
+
+    .search-item {
+      width: 100%;
+      min-height: 88rpx;
+      padding: 24rpx 32rpx;
+      line-height: 44rpx;
+      background-color: #ffffff;
+      box-sizing: border-box;
+
+      &:not(:last-child) {
+        border-bottom: 2rpx solid $color-e5;
+      }
+    }
+  }
+}
+//-----  支持搜索标签输入模板样式 end ----- 
+

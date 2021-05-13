@@ -1,0 +1,85 @@
+.f-xb-yc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.f-xl-yc {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.f-xl-yl {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.fs34 {
+  font-size: 34rpx;
+}
+
+.fs26 {
+  font-size: 26rpx;
+}
+
+
+.fc-c0 {
+  color: #1a1a1a;
+}
+
+.fc-c2 {
+  color: #999999;
+}
+
+.discount {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - 64rpx);
+  height: 120rpx;
+  padding: 0 32rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: #fff;
+  z-index: 10;
+}
+
+.icon80 {
+  width: 80rpx;
+  min-width: 80rpx;
+  height: 80rpx;
+  min-height: 80rpx;
+  border-radius: 16rpx;
+}
+
+.icon48 {
+  width: 48rpx;
+  min-width: 48rpx;
+  height: 48rpx;
+  min-height: 48rpx;
+}
+
+.discount-left {
+  flex-flow: column wrap;
+  padding-left: 16rpx;
+}
+
+.discount-left-name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 250rpx;
+}
+
+.discount-right {
+  flex-shrink: 0.6;
+  height: 72rpx;
+  padding: 0 10rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 72rpx;
+  background-color: #2EB2F0;
+  border-radius: 44rpx;
+}

@@ -1,0 +1,21 @@
+<svg id="select_pre" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #e5e5e5;
+      }
+
+      .cls-2 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="select_nor" class="cls-1">
+    <circle class="cls-2" cx="10" cy="10" r="10"/>
+    <circle class="cls-3" cx="10" cy="10" r="9.5"/>
+  </g>
+</svg>

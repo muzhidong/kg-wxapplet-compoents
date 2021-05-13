@@ -1,0 +1,15 @@
+.box {
+  text-align: center;
+}
+
+.no-content-image {
+  width: 400rpx;
+  height: 300rpx;
+  margin-top: 200rpx;
+}
+
+.no-content-text {
+  color: #707070;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}

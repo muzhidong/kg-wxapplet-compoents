@@ -1,0 +1,49 @@
+<!--pages/cli/cli.wxml-->
+<view class="container,cli-container">
+
+  <view class="cli-title">公瑾小程序脚手架说明</view>
+  
+  <template is="header" data="{{ ...{text:'功能'} }}"></template>
+  <view class="text">1.支持选择项目模板，快速搭建；</view>
+  <view class="text">2.支持选择组件引入项目，快速使用；</view>
+  <view class="text">3.支持项目模板的增、删、改、查，可以是本地模板，也可以是外链模板；</view>
+  <view class="text">4.支持组件的增、删、改、查，可以是本地组件，也可以是外链组件；</view>
+
+  <template is="header" data="{{ ...{text:'命令'} }}"></template>
+  <block wx:for="{{cmds}}">
+    <template is="section" data="{{...item}}"></template>
+  </block>
+
+  <template is="header" data="{{ ...{text:'选项'} }}"></template>
+  <block wx:for="{{opts}}">
+    <template is="section" data="{{...item}}"></template>
+  </block>
+
+  <template is="header" data="{{ ...{text:'示例'} }}"></template>
+  <block wx:for="{{terminals}}">
+    <template is="terminal" data="{{...item}}"></template>
+  </block>
+
+  <template is="header" data="{{ ...{text:'更多'} }}"></template>
+  <view class="text">该脚手架默认已维护公瑾项目模板、组件库的目前所有。</view>
+
+</view>
+
+<template name="header">
+  <view class="f-xl-yc,header">
+    <image mode="aspectFit" class="icon-finger" src="/images/finger.svg"></image>
+    <view style="padding-left:8rpx">{{text}}</view>
+  </view>
+</template>
+
+<template name="section">
+  <view class="text" style="white-space:pre-wrap;">{{cmd || opt}}\n{{desc}}</view>
+</template>
+
+<template name="terminal">
+  <view class="f-xl-yt,terminal">
+    <block wx:for="{{shell}}" wx:key="index">
+      <view>{{item}}</view>
+    </block>
+  </view>
+</template>

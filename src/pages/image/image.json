@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "upload-image": "/common-components/upload-image/upload-image",
+    "image-collect": "/common-components/image-collect/image-collect",
+    "image-cropper": "/common-components/image-cropper/image-cropper",
+    "image-list": "/common-components/image-list/image-list",
+    "image-swiper": "/common-components/image-swiper/image-swiper",
+    "preview-image": "/common-components/preview-image/preview-image"
+  }
+}

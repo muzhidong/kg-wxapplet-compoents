@@ -1,0 +1,15 @@
+{
+  "component": true,
+  "usingComponents": {
+    "button-group": "/common-components/button-group/button-group",
+    "tip-header": "/common-components/tip-header/tip-header",
+    "nav-pager": "/common-components/nav-pager/nav-pager",
+    "nav-bar": "/common-components/nav-bar/nav-bar",
+    "link-view": "/common-components/link-view/link-view",
+    "no-content": "/common-components/no-content/no-content",
+    "num-header": "/common-components/num-header/num-header",
+    "video-view": "/common-components/video-view/video-view",
+    "get-discount": "/business-components/get-discount/get-discount"
+  },
+  "navigationStyle": "custom"
+}

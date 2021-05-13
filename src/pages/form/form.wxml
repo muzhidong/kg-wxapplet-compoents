@@ -1,0 +1,116 @@
+<!--pages/form/form.wxml-->
+<view style="height:100%;background-color:#f8f8f8;padding-bottom:constant(safe-area-inset-bottom);padding-bottom:env(safe-area-inset-bottom);box-sizing:border-box;overflow:hidden">
+  <scroll-view scroll-y="{{true}}" style="height:100%;">
+    <block wx:if="{{kind == 1}}">
+      <label-input label="姓名：" placeholder="请输入姓名" inputType="text" mustable="{{true}}"></label-input>
+      <label-input label="年龄：" placeholder="请输入年龄" inputType="number" text="10"></label-input>
+    </block>
+    <block wx:if="{{kind == 2}}">
+      <label-picker label="喜欢的零食：" placeholder="请选择" list="{{['软糖','肉铺','面包']}}"></label-picker>
+      <label-picker label="喜欢的水果：" placeholder="请选择" mustable="{{true}}" list="{{['苹果','梨','橙']}}"></label-picker>
+      <label-picker label="喜欢的明星：" placeholder="请选择" selected="{{2}}" list="{{['成龙','刘德华','沈腾']}}"></label-picker>
+    </block>
+    <block wx:if="{{kind == 3}}">
+      <label-textarea label="备注：" placeholder="请填写" ></label-textarea>
+      <label-textarea label="给我留言：" text="棒棒哒" mustable="{{true}}"></label-textarea>
+    </block>
+    <block wx:if="{{kind == 4}}">
+      <view style="margin:20rpx 0  0 20rpx;">
+        <select-box value="1">
+          <view slot="left" style="padding-left:10rpx">苹果</view>
+          <view slot="right" class="arrow-btn,right" style="padding-right:20rpx"></view>
+          <view slot="addOn" style="padding-left:10rpx">苹果比较甜,苹果比较甜,苹果比较甜,苹果比较甜,苹果比较甜,苹果比较甜</view>
+        </select-box>
+        <select-box value="2">
+          <view slot="left" style="height:100rpx;background-color:#efefef;">自定义区域1</view>
+          <view slot="right" style="height:100rpx;background-color:#707070;">自定义区域2</view>
+          <view slot="addOn" style="width:100%;height:100rpx;background-color:#333333;color:white;">自定义区域3</view>
+        </select-box>
+      </view>
+    </block>
+
+    <import src="/common-templates/template.wxml" />
+    <block wx:if="{{kind == 5}}">
+
+      <template is="kg-text" data="{{...data1}}"></template>
+
+      <template is="kg-text" data="{{...data2}}"></template>
+
+      <template is="kg-text" data="{{...data3}}"></template>
+
+      <template is="kg-text" data="{{...data4}}"></template>
+
+      <template is="kg-text" data="{{...data5}}"></template>
+
+      <template is="kg-text" data="{{...data6}}"></template>
+
+    </block>
+
+    <block wx:if="{{kind == 6}}">
+      <template is="kg-input" data="{{...data7}}"></template>
+
+      <template is="kg-input" data="{{...data8}}"></template>
+
+      <template is="kg-input" data="{{...data9}}"></template>
+
+      <template is="kg-input" data="{{...data10}}"></template>
+
+      <template is="kg-input" data="{{...data11}}"></template>
+
+    </block>
+
+    <block wx:if="{{kind == 7}}">
+      <view style="padding: 40rpx 10rpx">单项选择器：</view>
+      <template is="kg-picker" data="{{...data12}}"></template>
+
+      <template is="kg-picker" data="{{...data13}}"></template>
+
+      <template is="kg-picker" data="{{...data14}}"></template>
+
+      <template is="kg-picker" data="{{...data15}}"></template>
+
+      <template is="kg-picker" data="{{...data16}}"></template>
+
+      <template is="kg-picker" data="{{...data17}}"></template>
+
+      <template is="kg-picker" data="{{...data18}}"></template>
+
+      <view style="padding: 40rpx 10rpx">日期选择器：</view>
+      <template is="kg-picker" data="{{...data19}}"></template>
+
+      <template is="kg-picker" data="{{...data20}}"></template>
+
+      <view style="padding: 40rpx 10rpx">地区选择器：</view>
+      <template is="kg-picker" data="{{...data21}}"></template>
+
+      <template is="kg-picker" data="{{...data22}}"></template>
+
+      <template is="kg-picker" data="{{...data23}}"></template>
+
+      <template is="kg-picker" data="{{...data24}}"></template>
+
+      <template is="kg-picker" data="{{...data25}}"></template>
+
+    </block>
+
+    <block wx:if="{{kind == 8}}">
+      <template is="kg-switch" data="{{...data26}}"></template>
+
+      <template is="kg-switch" data="{{...data27}}"></template>
+    </block>
+
+    <block wx:if="{{kind == 9}}">
+      <template is="kg-search-input" data="{{...data28}}"></template>
+      
+      <template is="kg-search-input" data="{{...data29}}"></template>
+    </block>
+
+    <block wx:if="{{kind == 10}}">
+      <template is="kg-expandable-text" data="{{...data30}}"></template>
+    </block>
+
+    <block wx:if="{{kind == 11}}">
+      <template is="kg-expandable-picker" data="{{...data31}}"></template>
+    </block>
+  </scroll-view>
+</view>

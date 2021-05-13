@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "abbreviation-text": "/common-components/abbreviation-text/abbreviation-text",
+    "text-identification": "/common-components/text-identification/text-identification"
+  }
+}

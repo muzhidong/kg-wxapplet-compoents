@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "base-modal": "/common-components/base-modal/base-modal",
+    "authorize-modal": "/business-components/authorize-modal/authorize-modal",
+    "get-discount-modal": "/business-components/get-discount-modal/get-discount-modal",
+    "subscribe-modal": "/business-components/subscribe-modal/subscribe-modal"
+  }
+}

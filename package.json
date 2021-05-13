@@ -1,0 +1,24 @@
+{
+  "name": "kg-wxapplet-components",
+  "version": "1.0.0",
+  "description": "公瑾微信小程序组件库",
+  "scripts": {
+    "docs": "rm -rf docs && jsdoc -c ./jsdoc.config.json",
+    "start": "http-server ./docs -p 9898",
+    "generatePath": "gulp generatePath",
+    "watchPath": "gulp watchPath"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "docdash": "^1.2.0",
+    "http-server": "^0.12.3",
+    "jsdoc": "^3.6.6"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-watch": "^5.0.1",
+    "json-format": "^1.0.1"
+  }
+}

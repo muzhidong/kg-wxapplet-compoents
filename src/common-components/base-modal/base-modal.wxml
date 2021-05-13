@@ -1,0 +1,24 @@
+<view class="base-modal-box f-xc-yc"
+  catch:touchmove="stopScroll"
+  hidden="{{hidden}}">
+
+  <view class="content-box">
+  
+    <view hidden="{{ !title }}" class="title">{{ title }}</view>
+
+    <image hidden="{{!showCloseBtn}}"
+      mode="aspectFit" 
+      src="./images/close_pop@2x.png" 
+      bindtap="toggle" 
+      class="close-icon">
+    </image> 
+
+    <view class="body">
+      <slot name="body" />
+    </view>
+
+     <slot name="buttons" />
+
+  </view>
+
+</view>

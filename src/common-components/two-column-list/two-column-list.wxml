@@ -1,0 +1,7 @@
+<view class="f-xb-yc" style="flex-flow:row wrap;">
+    <view wx:for="{{list}}" wx:key="index" class="f-xl-yc,item" >
+      <view class="point"></view>
+      <view class="text,fs28,fc-c1,content">{{item}}</view>
+    </view>
+</view>
+

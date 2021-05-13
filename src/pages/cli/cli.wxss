@@ -1,0 +1,60 @@
+/* pages/cli/cli.wxss */
+.cli-container {
+  padding: 0 40rpx;
+  background-color: #f8f8f8;
+}
+
+.cli-title {
+  padding: 17rpx 0 20rpx 0;
+  margin-bottom: 45rpx;
+  border-bottom: 2rpx solid #d2d2d2;
+  color: black;
+  font-size: 34rpx;
+}
+
+.cli-title::before {
+  content: '';
+  display: inline-block;
+  width: 17rpx;
+  height: 17rpx;
+  border: 2rpx solid black;
+  margin-right: 8rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.text {
+  padding-bottom: 26rpx;
+  color: black;
+  font-size: 30rpx;
+}
+
+/* header模板 start */
+.header {
+  padding-bottom: 28rpx;
+  color: black;
+  font-size: 30rpx;
+}
+
+.icon-finger {
+  width: 40rpx;
+  height: 40rpx;
+  max-width: 40rpx;
+  max-height: 40rpx;
+}
+
+/* header模板 end */
+
+/* terminal模板 start */
+.terminal {
+  flex-direction: column;
+  width: 100%;
+  padding: 24rpx 16rpx;
+  margin-bottom: 26rpx;
+  color: white;
+  font-size: 28rpx;
+  background-color: #222222;
+  box-sizing: border-box;
+}
+
+/* terminal模板 end */

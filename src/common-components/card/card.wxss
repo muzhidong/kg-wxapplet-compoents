@@ -1,0 +1,53 @@
+.card-view {
+  display: block;
+  border-radius: 16rpx;
+  background: #fff;
+  box-shadow: 0 4rpx 8rpx rgba(204, 204, 204, 1);
+}
+
+.user-data {
+  width: 718rpx;
+  height: 152rpx;
+  padding: 0 16rpx 0 32rpx;
+  box-sizing: border-box;
+}
+
+.left {
+  flex-direction: column;
+}
+
+.name {
+  max-width: 550rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  padding-bottom: 16rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.phone {
+  height: 42rpx;
+  line-height: 42rpx;
+  padding-left: 24rpx;
+}
+
+.right {
+  width: 120rpx;
+  min-width: 120rpx;
+  height: 120rpx;
+  min-height: 120rpx;
+  border-radius: 16rpx;
+}
+
+.icon24 {
+  width: 24rpx;
+  min-width: 24rpx;
+  height: 24rpx;
+  min-height: 24rpx;
+}
+
+.bg100 {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}

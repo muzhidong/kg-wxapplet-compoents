@@ -1,0 +1,68 @@
+@import '../../../sass/_common.scss';
+
+.table-fixed {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.table__fixed-columns {
+  z-index: 100;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  background-color: #fff;
+  pointer-events: none;
+  /*固定列不接受触摸，相当于滚动表格本身*/
+}
+
+.table {
+  width: 100%;
+  height: 100%;
+}
+
+.tr {
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.tr:nth-child(even) {
+  background-color: $color-f5;
+}
+
+.td,
+.th {
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  color: $color-66;
+  border-right: 1px solid $color-e5;
+  border-bottom: 1px solid $color-e5;
+}
+
+.td:first-child,
+.th:first-child {
+  border-left: 1px solid $color-e5;
+}
+
+.th {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 68rpx;
+  white-space: pre-wrap;
+  font-weight: bold;
+  font-size: 20rpx;
+  line-height: 1.5;
+  /* padding: 6rpx 0; */
+  border-top: 1px solid $color-e5;
+  color: $color-1a;
+  background-color: $color-f5;
+}
+
+.td {
+  font-size: 24rpx;
+  line-height: 1.5;
+  padding: 16rpx 0;
+}

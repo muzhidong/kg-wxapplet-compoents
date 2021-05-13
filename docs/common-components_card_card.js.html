@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>common-components/card/card.js - 公瑾组件库说明文档</title>
+    
+    <meta name="description" content="公瑾组件库说明文档" />
+    
+        <meta name="keywords" content="公瑾 组件库 说明文档" />
+        <meta name="keyword" content="公瑾 组件库 说明文档" />
+    
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/muzhidong" target="_blank" class="menu-item" id="website_link" >Author</a></h2><h3>Modules</h3><ul><li><a href="module-%255BT%255Dkg-expandable-picker.html">[T]kg-expandable-picker</a></li><li><a href="module-%255BT%255Dkg-expandable-text.html">[T]kg-expandable-text</a></li><li><a href="module-%255BT%255Dkg-input.html">[T]kg-input</a></li><li><a href="module-%255BT%255Dkg-picker.html">[T]kg-picker</a></li><li><a href="module-%255BT%255Dkg-search-input.html">[T]kg-search-input</a></li><li><a href="module-%255BT%255Dkg-switch.html">[T]kg-switch</a></li><li><a href="module-%255BT%255Dkg-text.html">[T]kg-text</a></li><li><a href="module-abbreviation-text.html">abbreviation-text</a></li><li><a href="module-authorize-modal.html">authorize-modal</a></li><li><a href="module-base-modal.html">base-modal</a></li><li><a href="module-button-group.html">button-group</a></li><li><a href="module-canvas-to-image.html">canvas-to-image</a></li><li><a href="module-card.html">card</a></li><li><a href="module-chat.html">chat</a></li><li><a href="module-get-discount.html">get-discount</a></li><li><a href="module-get-discount-modal.html">get-discount-modal</a></li><li><a href="module-image-collect.html">image-collect</a></li><li><a href="module-image-cropper.html">image-cropper</a></li><li><a href="module-image-list.html">image-list</a></li><li><a href="module-image-swiper.html">image-swiper</a></li><li><a href="module-label-input.html">label-input</a></li><li><a href="module-label-picker.html">label-picker</a></li><li><a href="module-label-textarea.html">label-textarea</a></li><li><a href="module-link-view.html">link-view</a></li><li><a href="module-list-item.html">list-item</a></li><li><a href="module-message-item.html">message-item</a></li><li><a href="module-nav-bar.html">nav-bar</a></li><li><a href="module-nav-pager.html">nav-pager</a></li><li><a href="module-no-content.html">no-content</a></li><li><a href="module-num-header.html">num-header</a></li><li><a href="module-orange-box.html">orange-box</a></li><li><a href="module-panel.html">panel</a></li><li><a href="module-personal-card.html">personal-card</a></li><li><a href="module-photo-identification.html">photo-identification</a></li><li><a href="module-preview-image.html">preview-image</a></li><li><a href="module-pull-down-list.html">pull-down-list</a></li><li><a href="module-recommend-list.html">recommend-list</a></li><li><a href="module-select-box.html">select-box</a></li><li><a href="module-standard-box.html">standard-box</a></li><li><a href="module-subscribe-modal.html">subscribe-modal</a></li><li><a href="module-table.html">table</a></li><li><a href="module-text-identification.html">text-identification</a></li><li><a href="module-tip-header.html">tip-header</a></li><li><a href="module-two-column-list.html">two-column-list</a></li><li><a href="module-upload-image.html">upload-image</a></li><li><a href="module-video-view.html">video-view</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">common-components/card/card.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module card
+ * @description 微信名片
+ * @property {Object}  userInfo      用户信息，由userName、userPhone、userAvatar三部分组成
+ * @property {boolean} isBindPhone   是否绑定手机
+ * @fires bindPhone  获取手机号分发事件
+ */
+
+Component({
+
+  options: {
+    addGlobalClass: true,
+  },
+
+  properties: {
+    userInfo: {
+      type: {
+        userName: String,
+        userPhone: String,
+        userAvatar: String,
+      },
+      value: {
+        userName: '',
+        userPhone: '',
+        userAvatar: '',
+      },
+    },
+    // 是否绑定手机
+    isBindPhone: {
+      type: Boolean,
+      value: true,
+    }
+  },
+
+  observers: {
+    'userInfo': function(value) {
+      this.setData({
+        userName: value.userName,
+        userPhone: value.userPhone,
+        userAvatar: value.userAvatar,
+      })
+    }
+  },
+
+  data: {
+    userName: "",
+    userPhone: "",
+    userAvatar: ""
+  },
+
+  methods: {
+
+    getPhoneNumber: function(e) {
+
+      if (e.detail.errMsg.includes("fail")) return;
+
+      this.triggerEvent('bindPhone', e);
+    },
+  },
+
+})
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon May 10 2021 15:03:30 GMT+0800 (中国标准时间) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>

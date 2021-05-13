@@ -1,0 +1,25 @@
+.list-item-wrapper {
+  background: #FFFFFF;
+  padding: 16rpx;
+  margin-top: 2rpx;
+}
+
+.icon {
+  width: 100rpx;
+  height: 100rpx;
+  min-width: 100rpx;
+  min-height: 100rpx;
+  margin-right: 24rpx;
+}
+
+.content {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.title {
+  height: 48rpx;
+  line-height: 48rpx;
+  color: #000;
+  padding-bottom: 10rpx;
+}

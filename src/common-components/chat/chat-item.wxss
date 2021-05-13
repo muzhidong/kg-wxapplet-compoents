@@ -1,0 +1,83 @@
+.chat-item {
+  box-sizing: border-box;
+  padding: 24rpx 32rpx;
+}
+
+.time {
+  padding: 24rpx 0;
+  text-align: center;
+}
+
+.talk {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.thumb {
+  flex: none;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 16rpx;
+}
+
+.default {
+  background-color: #f0f0f0;
+}
+
+.warn {
+  margin-top: 18rpx;
+}
+
+.text-box {
+  box-sizing: border-box;
+  max-width: 470rpx;
+  padding: 16rpx 24rpx;
+  margin: 0 34rpx;
+  border-radius: 24rpx;
+  background-color: #ffffff;
+  position: relative;
+  line-height: 1.5;
+  /* 允许单个单词分割换行 */
+  word-wrap: break-word;
+  /* 非中日韩文本换行 */
+  word-break: break-all;
+}
+
+.text-box .text {
+  display: block;
+}
+
+.self-icon,
+.other-icon {
+  width: 24rpx;
+  height: 15rpx;
+  position: absolute;
+  top: 22rpx;
+}
+
+.self-icon {
+  display: none;
+  right: -18rpx;
+}
+
+.other-icon {
+  left: -18rpx;
+}
+
+.talk.mine {
+  flex-direction: row-reverse;
+}
+
+.talk.mine .text-box {
+  background-color: #2eb2f0;
+  color: #ffffff;
+}
+
+.talk.mine .self-icon {
+  display: block;
+}
+
+.talk.mine .other-icon {
+  display: none;
+}

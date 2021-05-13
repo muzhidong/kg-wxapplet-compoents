@@ -1,0 +1,52 @@
+.f-xa-yc {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.f-xc-yc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fc-t {
+  color: #2eb2f0;
+}
+
+.fc-c0 {
+  color: #1a1a1a;
+}
+
+.fc-cx {
+  color: #ffffff;
+}
+
+.fs30 {
+  font-size: 30rpx;
+}
+
+.fs34 {
+  font-size: 34rpx;
+}
+
+.modal-body {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding: 36rpx 30rpx 48rpx;
+  text-align: center;
+}
+
+.ensure {
+  width: 262rpx;
+  height: 88rpx;
+  margin-right: 32rpx;
+  border: 2rpx solid rgba(46, 178, 240, 1);
+  background: #fff;
+  border-radius: 44rpx;
+}

@@ -1,0 +1,77 @@
+/**index.wxss**/
+
+.c-link {
+  padding: 20rpx 0;
+  position: relative;
+}
+
+.i-finger {
+  position: absolute;
+  left: 90rpx;
+  transform: translateY(50%);
+  width: 64rpx;
+  height: 64rpx;
+  max-width: 64rpx;
+  max-height: 64rpx;
+  padding-right: 20rpx;
+  animation: move .5s infinite reverse;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(10rpx);
+  }
+}
+
+.t-link {
+  border-bottom: 2rpx dashed #333333;
+  color: #333333;
+}
+
+/* module模板 start */
+.title {
+  height: 94rpx;
+  padding-left: 32rpx;
+
+  line-height: 94rpx;
+  color: #666666;
+
+  font-size: 30rpx;
+
+  background-color: #f8f8f8;
+}
+
+.item-wrapper {
+  padding-left: 32rpx;
+
+  background-color: #ffffff;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 88rpx;
+  padding-right: 35rpx;
+  border-bottom: 2rpx solid #ececec;
+
+  line-height: 30rpx;
+  color: #333333;
+
+  font-size: 30rpx;
+
+  box-sizing: border-box;
+}
+
+.space {
+  display: inline-block;
+  text-indent: 1em;
+}
+
+/* module模板 end */

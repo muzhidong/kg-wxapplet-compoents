@@ -1,0 +1,28 @@
+<!--pages/card/card.wxml-->
+<view style="background-color:#f8f8f8;">
+
+  <view style="height:100rpx"></view>
+
+  <block wx:if="{{kind == 1}}">
+    <card userInfo="{{userInfo}}"></card>
+    <view style="height:100rpx"></view>
+    <card userInfo="{{userInfo2}}"></card>
+    <view style="height:100rpx"></view>
+    <card userInfo="{{userInfo2}}" isBindPhone="{{false}}"></card>
+  </block>
+
+  <block wx:if="{{kind == 2}}">
+    <personal-card data="{{userInfo3}}"></personal-card>
+    <view style="height:100rpx"></view>
+    <personal-card data="{{userInfo4}}"></personal-card>
+    <view style="height:100rpx"></view>
+    <personal-card data="{{userInfo3}}" hiddenComp="{{true}}"></personal-card>
+     <view style="height:100rpx"></view>
+    <personal-card data="{{userInfo3}}" bind:onTapAvatar="onTapAvatar">
+      <view slot="dialBtn" style="color:red;">自定义区域1</view>
+      <view slot="labelBtn" style="color:red;">自定义区域2</view>
+      <view slot="bottomBox" style="color:red;">自定义底部区域3</view>
+    </personal-card>
+  </block>
+
+</view>

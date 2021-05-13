@@ -1,0 +1,12 @@
+<view class="select-container" style="{{hiddenUnderLine?'':'border-bottom: 2rpx solid #e5e5e5;'}}">
+  <view class="f-xb-yc" style="padding-right:32rpx;">
+    <view class="f-xl-yc" bindtap="onSwitch">
+      <image src="./images/select_{{selected?'after':'pre'}}.svg" />
+      <slot name='left'></slot>
+    </view>
+    <slot name='right'></slot>
+  </view>
+  <view style="padding-left:56rpx;">
+    <slot name='addOn'></slot>
+  </view>
+</view>

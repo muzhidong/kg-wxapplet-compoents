@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>common-components/photo-identification/photo-identification.js - 公瑾组件库说明文档</title>
+    
+    <meta name="description" content="公瑾组件库说明文档" />
+    
+        <meta name="keywords" content="公瑾 组件库 说明文档" />
+        <meta name="keyword" content="公瑾 组件库 说明文档" />
+    
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://github.com/muzhidong" target="_blank" class="menu-item" id="website_link" >Author</a></h2><h3>Modules</h3><ul><li><a href="module-%255BT%255Dkg-expandable-picker.html">[T]kg-expandable-picker</a></li><li><a href="module-%255BT%255Dkg-expandable-text.html">[T]kg-expandable-text</a></li><li><a href="module-%255BT%255Dkg-input.html">[T]kg-input</a></li><li><a href="module-%255BT%255Dkg-picker.html">[T]kg-picker</a></li><li><a href="module-%255BT%255Dkg-search-input.html">[T]kg-search-input</a></li><li><a href="module-%255BT%255Dkg-switch.html">[T]kg-switch</a></li><li><a href="module-%255BT%255Dkg-text.html">[T]kg-text</a></li><li><a href="module-abbreviation-text.html">abbreviation-text</a></li><li><a href="module-authorize-modal.html">authorize-modal</a></li><li><a href="module-base-modal.html">base-modal</a></li><li><a href="module-button-group.html">button-group</a></li><li><a href="module-canvas-to-image.html">canvas-to-image</a></li><li><a href="module-card.html">card</a></li><li><a href="module-chat.html">chat</a></li><li><a href="module-get-discount.html">get-discount</a></li><li><a href="module-get-discount-modal.html">get-discount-modal</a></li><li><a href="module-image-collect.html">image-collect</a></li><li><a href="module-image-cropper.html">image-cropper</a></li><li><a href="module-image-list.html">image-list</a></li><li><a href="module-image-swiper.html">image-swiper</a></li><li><a href="module-label-input.html">label-input</a></li><li><a href="module-label-picker.html">label-picker</a></li><li><a href="module-label-textarea.html">label-textarea</a></li><li><a href="module-link-view.html">link-view</a></li><li><a href="module-list-item.html">list-item</a></li><li><a href="module-message-item.html">message-item</a></li><li><a href="module-nav-bar.html">nav-bar</a></li><li><a href="module-nav-pager.html">nav-pager</a></li><li><a href="module-no-content.html">no-content</a></li><li><a href="module-num-header.html">num-header</a></li><li><a href="module-orange-box.html">orange-box</a></li><li><a href="module-panel.html">panel</a></li><li><a href="module-personal-card.html">personal-card</a></li><li><a href="module-photo-identification.html">photo-identification</a></li><li><a href="module-preview-image.html">preview-image</a></li><li><a href="module-pull-down-list.html">pull-down-list</a></li><li><a href="module-recommend-list.html">recommend-list</a></li><li><a href="module-select-box.html">select-box</a></li><li><a href="module-standard-box.html">standard-box</a></li><li><a href="module-subscribe-modal.html">subscribe-modal</a></li><li><a href="module-table.html">table</a></li><li><a href="module-text-identification.html">text-identification</a></li><li><a href="module-tip-header.html">tip-header</a></li><li><a href="module-two-column-list.html">two-column-list</a></li><li><a href="module-upload-image.html">upload-image</a></li><li><a href="module-video-view.html">video-view</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">common-components/photo-identification/photo-identification.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module photo-identification
+ * @description 拍照识别组件，通过拍照或选择相册图片进行OCR识别
+ * @property {boolean} takingPhotoIsEnd 拍照或从相册选择的后续过程是否结束
+ * @property {boolean} isCompressImage  图片是否压缩
+ * @fires handleOCR  处理OCR分发事件
+ */
+
+// 相机控件上下文
+let cameraContext;
+// 文件系统管理器
+let fsm;
+// 图片base64编码格式
+let base64;
+// 图片最大尺寸
+const maxSize = 4 * 1024 * 1024;
+
+Component({
+
+  options: {
+    addGlobalClass: true,
+    pureDataPattern: new RegExp('^_'),
+  },
+
+  properties: {
+    // 拍照过程是否结束
+    takingPhotoIsEnd: {
+      type: Boolean,
+      value: false,
+    },
+    // 是否压缩从拍摄或相册选择的图片
+    isCompressImage: {
+      type: Boolean,
+      value: true,
+    }
+  },
+
+  observers: {
+    'takingPhotoIsEnd': function(value) {
+      if (value) {
+        this.data._isTakingPhoto &amp;&amp; this.setData({
+          _isTakingPhoto: false,
+        })
+      }
+    }
+  },
+
+  data: {
+    isSwitchOnLight: false,
+    _isTakingPhoto: false,
+    // 测试用
+    // pic: "",
+  },
+
+  lifetimes: {
+
+    ready() {
+
+      // 获取相机上下文
+      cameraContext = wx.createCameraContext &amp;&amp; wx.createCameraContext();
+
+      // 获取文件系统管理器
+      fsm = wx.getFileSystemManager();
+    },
+
+  },
+
+  methods: {
+
+    // 切换灯开关
+    toggleSwitch() {
+
+      this.setData({
+        isSwitchOnLight: !this.data.isSwitchOnLight,
+      })
+
+    },
+
+    // 拍照
+    takePhoto() {
+
+      if (this.data._isTakingPhoto) return;
+
+      let self = this;
+
+      self.setData({
+        _isTakingPhoto: true
+      }, () => {
+
+        cameraContext.takePhoto({
+          quality: 'high',
+          success(res) {
+
+            console.log(res.tempImagePath);
+
+            // 测试用
+            // self.setData({
+            //   pic: res.tempImagePath,
+            // })
+
+            self.next(res.tempImagePath, null, '');
+
+          },
+          error() {
+            self.data._isTakingPhoto &amp;&amp; self.setData({
+              _isTakingPhoto: false,
+            })
+          }
+        });
+
+      })
+
+    },
+
+    // 选择相册
+    choosePhoto() {
+
+      let self = this;
+
+      wx.chooseImage({
+        count: 1,
+        sizeType: ['original'],
+        sourceType: ['album'],
+        success(res) {
+
+          let {
+            path,
+            size
+          } = res.tempFiles[0];
+
+          console.log(path, size);
+
+          // 测试用
+          // self.setData({
+          //   pic: path,
+          // })
+
+          self.next(path, size, 'album');
+
+        },
+      })
+
+    },
+
+    // 压缩图片
+    _compressImage(path, size, cb) {
+
+      let self = this;
+
+      if (size) {
+
+        if (size > maxSize) {
+          wx.compressImage({
+            src: path,
+            quality: 80,
+            success(res) {
+              self._compressImage(res.tempFilePath, null, cb);
+            }
+          })
+        } else {
+          base64 = fsm.readFileSync(path, 'base64');
+          cb &amp;&amp; cb(base64);
+        }
+
+      } else {
+
+        wx.getFileInfo({
+          filePath: path,
+          success(res) {
+            if (res.size > maxSize) {
+              wx.compressImage({
+                src: path,
+                quality: 80,
+                success(res) {
+                  self._compressImage(res.tempFilePath, null, cb);
+                }
+              })
+            } else {
+              base64 = fsm.readFileSync(path, 'base64');
+              cb &amp;&amp; cb(base64);
+            }
+          }
+        });
+
+      }
+    },
+
+    // 下一步处理
+    next(imgPath, imgSize, imgSource) {
+
+      if (this.data.isCompressImage) {
+        this._compressImage(imgPath, imgSize, (base64) => {
+          this.triggerEvent('handleOCR', {
+            base64,
+            imgSource,
+          })
+        });
+      } else {
+        base64 = fsm.readFileSync(imgPath, 'base64');
+        this.triggerEvent('handleOCR', {
+          base64,
+          imgSource,
+        })
+      }
+
+    },
+
+  }
+})
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon May 10 2021 15:03:30 GMT+0800 (中国标准时间) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>

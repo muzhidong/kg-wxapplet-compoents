@@ -1,0 +1,133 @@
+.f-xa-ys {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.f-xc-yc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fc-c0 {
+  color: #1a1a1a;
+}
+
+.fc-c1 {
+  color: #666666;
+}
+
+.fc-cc {
+  color: #cccccc;
+}
+
+.fs34 {
+  font-size: 34rpx;
+}
+
+.fs26 {
+  font-size: 26rpx;
+}
+
+.mb24 {
+  margin-bottom: 24rpx;
+}
+
+.block {
+  display: block;
+}
+
+.kg-btn {
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 88rpx;
+  border-radius: 44rpx;
+}
+
+.kg-btn.primary {
+  background-color: #2eb2f0;
+  font-size: 34rpx;
+  color: #ffffff;
+}
+
+page {
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* 顶部 */
+.top {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100rpx;
+  background-color: #ffffff;
+  z-index: 9;
+}
+
+.top-btn {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.top-icon {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 26rpx;
+}
+
+/* 聊天 */
+.chat-container {
+  height: calc(100% - 114rpx);
+  height: calc(100% - 114rpx - constant(safe-area-inset-bottom));
+  height: calc(100% - 114rpx - env(safe-area-inset-bottom));
+}
+
+.textarea-wrapper {
+  position: fixed;
+  right: 20rpx;
+  left: 20rpx;
+  padding: 16rpx 158rpx 16rpx 32rpx;
+  border-radius: 44rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-bottom: constant(safe-area-inset-bottom);
+  margin-bottom: env(safe-area-inset-bottom);
+}
+
+.bottom-textarea {
+  width: 100%;
+  height: 56rpx;
+  min-height: 56rpx;
+  line-height: 50rpx;
+}
+
+button.send-btn {
+  position: absolute;
+  top: 14rpx;
+  right: 14rpx;
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background-color: #2EB2F0;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+
+button[disabled][type=primary] {
+  background-color: #CCCCCC;
+  color: #FFFFFF;
+}

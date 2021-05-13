@@ -1,0 +1,6 @@
+<view class="navbar,f-xl-yc" style="height:{{navBarHeight}}px;padding-top:{{statusBarHeight}}px;">
+	<view class="navbar-btn,arrow-btn,left" style="width:{{navBarHeight}}px;" hover-class="button-hover" bindtap="goBack"></view>
+	<view class="navbar-title,fs32,{{isAndroid?'':'center'}},f-xc-yc">
+		<slot></slot>
+	</view>
+</view>

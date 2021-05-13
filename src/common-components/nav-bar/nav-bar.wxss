@@ -1,0 +1,34 @@
+page {
+  overflow-y: hidden;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 2147483647;
+}
+
+.navbar .navbar-btn {
+  height: inherit;
+}
+
+.navbar .navbar-btn::after {
+  width: 8.49px;
+  height: 8.49px;
+  border-width: 4rpx;
+  border-color: #000000 #000000 transparent transparent;
+}
+
+.navbar .navbar-title {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.navbar .navbar-title.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

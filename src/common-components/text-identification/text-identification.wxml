@@ -1,0 +1,26 @@
+<view class="ti-container">
+	<view class="header,f-xl-yc">
+		<view class="fs30,fc-c1">{{title}}</view>
+		<slot></slot>
+	</view>
+	<textarea
+		name="addressTextArea" 
+		value = "{{value}}"
+		class="input-area,fs30,fc-c0" 
+		placeholder="{{placeholder}}"
+		placeholder-class="fc-cc" 
+		maxlength = "{{maxLength}}"
+		bindinput = "handleAreaInput"
+		fixed = "true"/>
+	<view class="footer,f-xr-yl">
+			<view class="fs26,clean,f-xc-yc" 
+				hidden="{{!identifyEnabled}}" 
+				bindtap="handleClearTextArea">清空</view>
+			<view class="fs26,identify,f-xc-yc" 
+				style="background-color:{{identifyEnabled?'#3399FF':'#cccccc'}};" 
+				bindtap="handleIdentifyTextArea">识别</view>	
+	</view>
+	<view class="f-xc-yc,errorTip-container" hidden="{{errorTipHidden}}">
+			<view class="errorTip,fs26">文本内容无法识别，请重新输入后重试</view>
+	</view>
+</view>

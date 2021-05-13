@@ -1,0 +1,40 @@
+<!--pages/list/list.wxml-->
+<block wx:if="{{kind == 1}}">
+  <list-item icon="{{item.icon}}" title="{{item.title}}" subtitle="{{item.subtitle}}" path="{{item.path}}"></list-item>
+  <list-item icon="{{item.icon}}" title="{{item.title}}" subtitle="{{item.subtitle}}" path="{{item.path}}"></list-item>
+  <list-item icon="{{item.icon}}" title="{{item.title}}" subtitle="{{item.subtitle}}" path="{{item.path}}"></list-item>
+</block>
+<block wx:if="{{kind == 2}}">
+  <message-item avatar="{{message.avatar}}" 
+    userName="{{message.userName}}" 
+    message="{{message.message}}" 
+    messageTime="{{message.messageTime}}" 
+    noticeInt="{{message.noticeInt}}"
+    bind:onTapItem="onTapMsgItem">
+  </message-item>
+  <message-item avatar="{{message.avatar}}" 
+    userName="{{message.userName}}" 
+    message="{{message.message}}" 
+    messageTime="{{message.messageTime}}" 
+    noticeInt="{{message.noticeInt}}"
+    bind:onTapItem="onTapMsgItem">
+  </message-item>
+  <message-item avatar="{{message.avatar}}" 
+    userName="{{message.userName}}" 
+    message="{{message.message}}" 
+    messageTime="{{message.messageTime}}" 
+    noticeInt="{{message.noticeInt}}"
+    bind:onTapItem="onTapMsgItem">
+  </message-item>
+</block>
+<block wx:if="{{kind == 3}}">
+  <view style="background-color:white;">
+    <recommend-list list="{{recommendList}}" bind:onTapItem="onTapRecommendItem"></recommend-list>
+  </view>
+</block>
+<block wx:if="{{kind == 4}}">
+  <pull-down-list list="{{list}}"></pull-down-list>
+</block>
+<block wx:if="{{kind == 5}}">
+  <two-column-list list="{{list}}"></two-column-list>
+</block>

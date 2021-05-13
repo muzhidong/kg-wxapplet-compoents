@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.121" height="14.121" viewBox="0 0 14.121 14.121">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #39f;
+        stroke-linecap: round;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="switch_change" transform="translate(1.061 1.061)">
+    <g id="组_4484" data-name="组 4484" transform="translate(-869.5 -283.5)">
+      <line id="直线_43" data-name="直线 43" class="cls-1" x2="12" transform="translate(869.5 287.5)"/>
+      <line id="直线_44" data-name="直线 44" class="cls-1" x2="4" y2="4" transform="translate(877.5 283.5)"/>
+    </g>
+    <g id="组_4485" data-name="组 4485" transform="translate(0 8)">
+      <line id="直线_43-2" data-name="直线 43" class="cls-1" x1="12" transform="translate(0 0)"/>
+      <line id="直线_44-2" data-name="直线 44" class="cls-1" x1="4" y1="4" transform="translate(0 0)"/>
+    </g>
+  </g>
+</svg>

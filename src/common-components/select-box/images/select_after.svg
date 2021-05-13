@@ -1,0 +1,18 @@
+<svg id="select_pre" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #39f;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <circle id="椭圆_1041" data-name="椭圆 1041" class="cls-1" cx="10" cy="10" r="10"/>
+  <g id="组_305" data-name="组 305" transform="translate(11.022 2.136) rotate(45)">
+    <rect id="矩形_211" data-name="矩形 211" class="cls-2" width="7" height="2" rx="1" transform="translate(0 9)"/>
+    <rect id="矩形_212" data-name="矩形 212" class="cls-2" width="2" height="11" rx="1" transform="translate(5)"/>
+  </g>
+</svg>

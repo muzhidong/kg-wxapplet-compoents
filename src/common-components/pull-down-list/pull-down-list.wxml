@@ -1,0 +1,36 @@
+<view class="container,list-container">
+
+  <!-- 内容 -->
+  <view class="top,bar" bindtap="onSwitch">
+    <view class="f-xc-yc">
+      <text class="fc-c0,fs34">{{selectedText}}</text>
+      <image src="./images/switch_change.svg" />
+      <text class="fc-t,fs26,">切换</text>
+    </view>
+  </view>
+
+  <!-- 弹框 -->
+  <view class="dialog" hidden="{{!isExpand}}" style="{{useCustomNavBar?'top:' + offsetTop + 'px;':''}}">
+
+    <!-- 列表 -->
+    <scroll-view class="list" scroll-y="{{true}}">
+      <block wx:for="{{list}}" wx:key="index">
+        <view class="f-xc-yc,item,bar" bindtap="onSelect" data-index="{{index}}">
+          <view class="{{selected === index ?'fc-t':'fc-c0'}},fs34">
+            <image src="./images/switch_select.svg" wx:if="{{selected === index}}" />
+            <text>{{item}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+
+    <!-- 底部文字 -->
+    <view wx:if="{{!!bottomText}}" class="fc-c2,fs34,bottom,bar" bindtap="onTapBottom">
+      {{bottomText}}
+    </view>
+
+     <view class='wrapper' bindtap="onSwitch"></view>
+
+  </view>
+
+</view>

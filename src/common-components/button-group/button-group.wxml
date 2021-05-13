@@ -1,0 +1,26 @@
+<view class="btn-group-container,{{btnArr.length>2?'three':'two'}}">
+
+  <block wx:for="{{btnArr}}" wx:key="index">
+
+    <view class="btn-group-item" bindtap="dispatch" data-index="{{index}}">
+
+      <image src="{{item.icon}}" class="icon40" mode="aspectFit"></image>
+
+      <block wx:if="{{item.event === 'share'}}">
+        <button style="font-size:26rpx;color:#666666;margin-left:16rpx;" 
+          open-type="share" 
+          data-index="{{idx}}">
+          {{item.name}}
+        </button>
+      </block>
+      <block wx:else>
+        <text class="fs26,fc-c1,pl16">{{item.name}}</text>
+      </block>
+
+    </view>
+
+  </block>
+
+</view>
+
+<view class="{{hiddenUnderline?'none':'bottom-line'}}"></view>

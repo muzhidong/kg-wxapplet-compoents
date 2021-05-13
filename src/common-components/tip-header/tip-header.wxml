@@ -1,0 +1,24 @@
+<view class="base">
+  <view class="groupBase">
+
+    <view class="colorLine" wx:if="{{title}}"></view>
+
+    <view class="groupContainer">
+      <view class="groupMessage" 
+        style="flex-grow: {{isCloseToTitle?'0':'1'}};" wx:if="{{title}}">{{title}}</view>
+
+      <view class="f-xc-yc,groupQuestion" 
+        hidden="{{!isCloseToTitle}}" 
+        bind:tap="onTapTip" 
+        data-param='{{tip.id}}'>?</view>
+
+      <view class="f-xc-yc,groupTip" 
+        bind:tap="onTapTip" 
+        data-param='{{tip.id}}'>
+          <view class="f-xc-yc,question" hidden="{{!isShowQuestionMark}}">?</view>
+          <text>{{tip.text}}</text> 
+      </view>
+    </view>
+
+  </view>
+</view>

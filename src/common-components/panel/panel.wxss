@@ -1,0 +1,13 @@
+.box-container {
+  width: 100%;
+  padding: 0 32rpx;
+  border-top: 16rpx solid #f5f5f5;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.box-container .line {
+  width: calc(100% + 32rpx);
+  border-bottom: 2rpx solid #e5e5e5;
+}

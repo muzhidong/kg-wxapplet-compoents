@@ -1,0 +1,49 @@
+<block wx:if="{{length === 1}}">
+  <view class="image-list,item" style="width: 100%;">
+    <view
+      style="width: {{onlyOneStyle.width}}; height: {{onlyOneStyle.height}}"
+      class="image-box only-one">
+    <image
+      bindload="handleOnlyOne"
+      lazy-load="{{true}}"
+      src="{{list[0]}}"
+      mode="{{onlyOneStyle.mode}}"
+      bindtap="previewPic"
+      data-index="{{0}}"></image>
+    </view>
+  </view>
+</block>
+<block wx:elif="{{length === 2 || length === 4}}">
+  <view class="image-list,four">
+    <view
+      wx:for="{{list}}"
+      wx:key="index"
+      class="item">
+      <view class="image-box">
+        <image
+          lazy-load="{{true}}"
+          mode="aspectFill"
+          src="{{item}}"
+          bindtap="previewPic"
+          data-index="{{index}}" class="img2"></image>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="image-list">
+    <view
+      wx:for="{{list}}"
+      wx:key="index"
+      class="item">
+      <view class="image-box">
+        <image
+          lazy-load="{{true}}"
+          mode="aspectFill"
+          src="{{item}}"
+          bindtap="previewPic"
+          data-index="{{index}}" class="img2"></image>
+      </view>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,11 @@
+<!--pages/functional/functional.wxml-->
+<block wx:if="{{kind == 1}}">
+  <canvas-to-image taskList="{{taskList}}"></canvas-to-image>
+</block>
+<block wx:if="{{kind == 2}}">
+  <photo-identification></photo-identification>
+</block>
+<block wx:if="{{kind == 3}}">
+  <chat></chat>
+</block>
+

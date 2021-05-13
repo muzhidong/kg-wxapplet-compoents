@@ -1,0 +1,17 @@
+<view class="chat-item">
+  <view wx:if="{{ date }}" class="time fc-c2 fs26">{{ date }}</view>
+  <view class="talk {{ isSelf ? 'mine' : '' }}">
+    <block wx:if="{{thumb && thumb !== 'undefined'}}">
+      <image class="thumb" mode="aspectFit" src="{{ thumb }}"></image>
+    </block>
+    <block wx:else>
+      <view class="thumb,default"></view>
+    </block>
+    <view class="text-box">
+      <text class="text">{{ inner }}</text>
+      <image class="self-icon" mode="aspectFit" src="./images/bubble_hook_blue@2x.png"></image>
+      <image class="other-icon" mode="aspectFit" src="./images/bubble_hook_white@2x.png"></image>
+    </view>
+    <icon type="warn" wx:if="{{ isFail && isSelf }}" class="warn"></icon>
+  </view>
+</view>

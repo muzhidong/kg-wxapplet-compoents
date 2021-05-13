@@ -1,0 +1,15 @@
+.video-container {
+  display: flex;
+  justify-content: center;
+}
+
+.icon48 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 96rpx;
+  max-height: 96rpx;
+  width: 96rpx;
+  height: 96rpx;
+}

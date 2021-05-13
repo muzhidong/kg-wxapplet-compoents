@@ -1,0 +1,10 @@
+<view class="s-box" style="{{bgWhite?'background: #fff;':''}}">
+  <view class="top">
+    <view class="f-xl-yc">
+      <view class="line" hidden="{{hiddenLine}}"></view>
+      <text class="{{titleClass!=0?'recommend-title':'title'}}">{{title}}</text>
+    </view>
+    <slot name="rightBtn"></slot>
+  </view>
+  <slot name="body"></slot>
+</view>

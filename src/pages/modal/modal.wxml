@@ -1,0 +1,22 @@
+<!--pages/modal/modal.wxml-->
+<block wx:if="{{kind == 1}}">
+  <base-modal hidden="{{false}}" title="基本模态框" showCloseBtn="{{true}}" bindtoggle="toggle"></base-modal>
+</block>
+<block wx:if="{{kind == 2}}">
+  <authorize-modal hidden="{{false}}" title="授权模态框" content="这是内容"></authorize-modal>
+</block>
+<block wx:if="{{kind == 3}}">
+  <view>请选择优惠框类型：</view>
+  <radio-group bindchange="onChange">
+    <radio value="0" checked>类型1:未获取优惠</radio>
+    <radio value="1" >类型2:获取过优惠</radio>
+  </radio-group>
+  <get-discount-modal id="discount" title="优惠模态框" type="{{type}}"></get-discount-modal>
+</block>
+<block wx:if="{{kind == 4}}">
+  <subscribe-modal hidden="{{false}}" title="订阅模态框" subTitle="这是子标题" tmplIds="{{[]}}"></subscribe-modal>
+</block>
+
+
+
+

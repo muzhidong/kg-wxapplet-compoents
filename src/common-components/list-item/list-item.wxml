@@ -1,0 +1,7 @@
+<view class="f-xl-yc list-item-wrapper" bindtap="openPage">
+  <image class="icon" src="{{icon}}" mode="aspectFit"></image>
+  <view class="content">
+    <view class="fs34,text,title">{{title}}</view>
+    <view class="fs26,fc-c2,text,line-clamp3">{{subtitle}}</view>
+  </view>
+</view>

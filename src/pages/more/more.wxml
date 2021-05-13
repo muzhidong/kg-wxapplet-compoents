@@ -1,0 +1,7 @@
+<!--pages/more/more.wxml-->
+<view class="f-xc-yc" style="height:100%;flex-direction:column;">
+  <block wx:for="{{list}}" wx:key="index">
+    <view style="padding:40rpx 0;color:#333333;">{{item.name}}</view>
+    <image src="{{item.src}}"  mode="aspectFit" bindtap="openApplet" data-index="{{index}}"/>
+  </block>
+</view>

@@ -1,0 +1,15 @@
+<view class="message-record-container" bindtap="onTapItem">
+
+  <image src="{{_imgUrl}}" class="left" mode="aspectFit"></image>
+
+  <view class="middle">
+    <text class="fs34,fc-c0,middle-name">{{_userName}}</text>
+    <view class="fs26,fc-c2,middle-message">{{_message}}</view>
+  </view>
+
+  <view class="right">
+    <view class="fs26,fc-c2">{{_messageTime}}</view>
+    <view class="fs24,fc-cx,{{_noticeInt < 1 ? 'none' : 'right-tip'}}">{{_noticeInt}}</view>
+  </view>
+
+</view>

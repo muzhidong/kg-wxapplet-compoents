@@ -1,0 +1,26 @@
+<base-modal id="modal" title="{{ type ? '' : title }}" close-btn="{{!type}}">
+  <view slot="body">
+    <block wx:if="{{type}}">
+      <view class="f-xc-yc" style="flex-flow:column wrap;">
+        <text class="fs32,fc-c0,mb32">
+          你已申请优惠成功，稍后我们将会有专属顾问与你联系，请你留意接听电话。
+        </text>
+        <button class="kg-btn primary" bindtap="close" style="width:100%;">
+          好的
+        </button>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="c-input mb24">
+        <input value="{{ discountName }}" bindinput="nameInput" type="text" placeholder="请输入您的姓名"></input>
+      </view>
+      <view class="c-input mb40">
+        <input value="{{ discountPhone }}" bindinput="phoneInput" maxlength="11" type="number" placeholder="请输入您的手机号"></input>
+      </view>
+      <text class="fc-c1 fs30 mb32 block">稍后我们将会有专属的顾问与你联系，请你留意接听电话。</text>
+      <button class="kg-btn primary {{ discountPhone.length < 11 ? 'disabled' : '' }}" bindtap="submit">
+        提交
+      </button>
+    </block>
+  </view>
+</base-modal>
