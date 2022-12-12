@@ -1,10 +1,10 @@
-# 公瑾组件库项目
+# 组件库项目
 
 ## 项目结构
 ```
-|-- docs                   小程序组件库文档
+|-- docs                   小程序组件文档
 |-- gulpfile.js            gulp脚本，主要用于自动化配置页面路径
-|-- src                    小程序组件库源码
+|-- src                    小程序组件源码
 |-- .editorconfig          编辑器配置
 |-- jsdoc.config.json      jsdoc配置
 |-- package.json           包配置
